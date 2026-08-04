@@ -1,0 +1,61 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Тетрис</title>
+<style>
+body{background:#111;color:#fff;text-align:center;font:18px Arial}canvas{background:#000;border:3px solid #888}
+</style>
+<h2>Тетрис — <span id="score">0</span></h2>
+<canvas id="game" width="200" height="400"></canvas>
+<p>← → двигать, ↑ вращать, ↓ ускорить</p>
+<script>
+const c=document.querySelector('#game'),x=c.getContext('2d'),S=20;
+const shapes=[
+ [[1,1,1,1]],[[1,1],[1,1]],[[1,1,1],[0,1,0]],
+ [[1,1,1],[1,0,0]],[[1,1,1],[0,0,1]],
+ [[1,1,0],[0,1,1]],[[0,1,1],[1,1,0]]
+],colors=['cyan','yellow','purple','orange','blue','red','lime'];
+let board,player,points;
+function start(){
+ board=Array.from({length:20},()=>Array(10).fill(0));
+ points=0;score.textContent=0;next();draw();
+}
+function next(){
+ let n=Math.random()*7|0;
+ player={shape:shapes[n],color:n+1,x:3,y:0};
+ if(hit())start();
+}
+function hit(dx=0,dy=0,shape=player.shape){
+ return shape.some((row,y)=>row.some((v,z)=>v&&(
+  player.x+z+dx<0||player.x+z+dx>9||player.y+y+dy>19||
+  board[player.y+y+dy]?.[player.x+z+dx]
+ )));
+}
+function move(dx,dy){
+ if(!hit(dx,dy)){player.x+=dx;player.y+=dy;return}
+ if(!dy)return;
+ player.shape.forEach((row,y)=>row.forEach((v,z)=>v&&(board[player.y+y][player.x+z]=player.color)));
+ let old=board.length;
+ board=board.filter(row=>row.some(v=>!v));
+ let lines=old-board.length;
+ while(board.length<20)board.unshift(Array(10).fill(0));
+ points+=lines*100;score.textContent=points;next();
+}
+function rotate(){
+ let a=player.shape[0].map((_,i)=>player.shape.map(r=>r[i]).reverse());
+ if(!hit(0,0,a))player.shape=a;
+}
+function draw(){
+ x.clearRect(0,0,200,400);
+ board.forEach((row,y)=>row.forEach((v,z)=>v&&block(z,y,v)));
+ player.shape.forEach((row,y)=>row.forEach((v,z)=>v&&block(player.x+z,player.y+y,player.color)));
+}
+function block(a,b,color){x.fillStyle=colors[color-1];x.fillRect(a*S+1,b*S+1,S-2,S-2)}
+onkeydown=e=>{
+ if(e.key==='ArrowLeft')move(-1,0);
+ if(e.key==='ArrowRight')move(1,0);
+ if(e.key==='ArrowDown')move(0,1);
+ if(e.key==='ArrowUp')rotate();
+ draw();
+};
+start();setInterval(()=>{move(0,1);draw()},500);
+</script>
