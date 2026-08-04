@@ -1,0 +1,561 @@
+{
+  "project": "МИР: Тетрис",
+  "format": "PNG with alpha transparency",
+  "header": [
+    {
+      "id": "game_header",
+      "path": "header/game_header.png",
+      "width": 2172,
+      "height": 724,
+      "usage": "Desktop game header; text is already embedded."
+    }
+  ],
+  "yashkaChips": [
+    {
+      "id": "01_yashka_raduetsya",
+      "path": "yashka-chips/01_yashka_raduetsya.png",
+      "usage": "Reward chip: Yashka is happy",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "02_yashka_lovit_zvezdu",
+      "path": "yashka-chips/02_yashka_lovit_zvezdu.png",
+      "usage": "Reward chip: extra star",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "03_yashka_podskazyvaet",
+      "path": "yashka-chips/03_yashka_podskazyvaet.png",
+      "usage": "Reward chip: hint",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "04_yashka_spokoystvie",
+      "path": "yashka-chips/04_yashka_spokoystvie.png",
+      "usage": "Reward chip: slow down",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "05_yashka_s_syurprizom",
+      "path": "yashka-chips/05_yashka_s_syurprizom.png",
+      "usage": "Reward chip: surprise chest",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "06_yashka_menyaet_figuru",
+      "path": "yashka-chips/06_yashka_menyaet_figuru.png",
+      "usage": "Reward chip: swap piece",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "07_yashka_nablyudatel",
+      "path": "yashka-chips/07_yashka_nablyudatel.png",
+      "usage": "Reward chip: landing preview",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "08_yashka_vyruchaet",
+      "path": "yashka-chips/08_yashka_vyruchaet.png",
+      "usage": "Reward chip: rescue",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "09_zvezdnyy_yashka",
+      "path": "yashka-chips/09_zvezdnyy_yashka.png",
+      "usage": "Rare final star chip",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    }
+  ],
+  "bonuses": [
+    {
+      "id": "01_star_cube",
+      "path": "bonuses/01_star_cube.png",
+      "usage": "Adds or activates a star reward",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "02_rocket",
+      "path": "bonuses/02_rocket.png",
+      "usage": "Clears the lowest filled row",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "03_rainbow_cube",
+      "path": "bonuses/03_rainbow_cube.png",
+      "usage": "Universal/wildcard block",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "04_snowflake",
+      "path": "bonuses/04_snowflake.png",
+      "usage": "Slows falling pieces temporarily",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "05_magnet",
+      "path": "bonuses/05_magnet.png",
+      "usage": "Moves or attracts a piece toward a valid slot",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "06_hint_lightbulb",
+      "path": "bonuses/06_hint_lightbulb.png",
+      "usage": "Shows a suggested placement",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "07_swap_piece",
+      "path": "bonuses/07_swap_piece.png",
+      "usage": "Replaces the next inconvenient piece",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "08_rescue_heart",
+      "path": "bonuses/08_rescue_heart.png",
+      "usage": "Prevents game over once",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "09_treasure_chest",
+      "path": "bonuses/09_treasure_chest.png",
+      "usage": "Opens a random bonus",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "10_magic_clear",
+      "path": "bonuses/10_magic_clear.png",
+      "usage": "Clears several obstructing blocks",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    }
+  ],
+  "specialBlocks": [
+    {
+      "id": "01_star",
+      "path": "special-blocks/01_star.png",
+      "usage": "Special cell symbol: star",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "02_rocket",
+      "path": "special-blocks/02_rocket.png",
+      "usage": "Special cell symbol: rocket",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "03_rainbow",
+      "path": "special-blocks/03_rainbow.png",
+      "usage": "Special cell symbol: rainbow wildcard",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "04_snowflake",
+      "path": "special-blocks/04_snowflake.png",
+      "usage": "Special cell symbol: slow down",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "05_magnet",
+      "path": "special-blocks/05_magnet.png",
+      "usage": "Special cell symbol: magnet",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "06_hint",
+      "path": "special-blocks/06_hint.png",
+      "usage": "Special cell symbol: hint",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "07_swap",
+      "path": "special-blocks/07_swap.png",
+      "usage": "Special cell symbol: swap",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "08_rescue_heart",
+      "path": "special-blocks/08_rescue_heart.png",
+      "usage": "Special cell symbol: rescue",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "09_chest",
+      "path": "special-blocks/09_chest.png",
+      "usage": "Special cell symbol: chest",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    },
+    {
+      "id": "10_question",
+      "path": "special-blocks/10_question.png",
+      "usage": "Special cell symbol: question task",
+      "width": 192,
+      "height": 192,
+      "transparent": true
+    }
+  ],
+  "taskIcons": [
+    {
+      "id": "01_listen_ear",
+      "path": "task-icons/01_listen_ear.png",
+      "usage": "Task type: listen",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "id": "02_look_eye",
+      "path": "task-icons/02_look_eye.png",
+      "usage": "Task type: look carefully",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "id": "03_say_speech_bubble",
+      "path": "task-icons/03_say_speech_bubble.png",
+      "usage": "Task type: say or answer aloud",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "id": "04_think_lightbulb",
+      "path": "task-icons/04_think_lightbulb.png",
+      "usage": "Task type: think",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "id": "05_remember_cards",
+      "path": "task-icons/05_remember_cards.png",
+      "usage": "Task type: remember pictures",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "id": "06_find_magnifier",
+      "path": "task-icons/06_find_magnifier.png",
+      "usage": "Task type: find",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "id": "07_syllables_clap_hands",
+      "path": "task-icons/07_syllables_clap_hands.png",
+      "usage": "Task type: clap syllables",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    },
+    {
+      "id": "08_choose_answer_checkmark",
+      "path": "task-icons/08_choose_answer_checkmark.png",
+      "usage": "Task type: choose an answer",
+      "width": 256,
+      "height": 256,
+      "transparent": true
+    }
+  ],
+  "questionObjects": [
+    {
+      "id": "01_ball",
+      "path": "question-objects/01_ball.png",
+      "usage": "ball",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "02_car",
+      "path": "question-objects/02_car.png",
+      "usage": "car",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "03_airplane",
+      "path": "question-objects/03_airplane.png",
+      "usage": "airplane",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "04_apple",
+      "path": "question-objects/04_apple.png",
+      "usage": "apple",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "05_cup",
+      "path": "question-objects/05_cup.png",
+      "usage": "cup",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "06_cat",
+      "path": "question-objects/06_cat.png",
+      "usage": "cat",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "07_dog",
+      "path": "question-objects/07_dog.png",
+      "usage": "dog",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "08_flower",
+      "path": "question-objects/08_flower.png",
+      "usage": "flower",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "09_cube",
+      "path": "question-objects/09_cube.png",
+      "usage": "toy cube",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "10_doll",
+      "path": "question-objects/10_doll.png",
+      "usage": "doll",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "11_stacking_pyramid",
+      "path": "question-objects/11_stacking_pyramid.png",
+      "usage": "stacking pyramid",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "12_lemon",
+      "path": "question-objects/12_lemon.png",
+      "usage": "lemon",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "13_spoon",
+      "path": "question-objects/13_spoon.png",
+      "usage": "spoon",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "14_fish",
+      "path": "question-objects/14_fish.png",
+      "usage": "fish",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "15_bird",
+      "path": "question-objects/15_bird.png",
+      "usage": "bird",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "16_tree",
+      "path": "question-objects/16_tree.png",
+      "usage": "tree",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "17_butterfly",
+      "path": "question-objects/17_butterfly.png",
+      "usage": "butterfly",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "18_hedgehog",
+      "path": "question-objects/18_hedgehog.png",
+      "usage": "hedgehog",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "19_carrot",
+      "path": "question-objects/19_carrot.png",
+      "usage": "carrot",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "20_mushroom",
+      "path": "question-objects/20_mushroom.png",
+      "usage": "mushroom",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "21_sun",
+      "path": "question-objects/21_sun.png",
+      "usage": "sun",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "22_cloud",
+      "path": "question-objects/22_cloud.png",
+      "usage": "cloud",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "23_winter_hat",
+      "path": "question-objects/23_winter_hat.png",
+      "usage": "winter hat",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    },
+    {
+      "id": "24_mittens",
+      "path": "question-objects/24_mittens.png",
+      "usage": "mittens",
+      "width": 384,
+      "height": 384,
+      "transparent": true
+    }
+  ],
+  "yashkaUI": [
+    {
+      "id": "01_yashka_welcome",
+      "path": "yashka-ui/01_yashka_welcome.png",
+      "usage": "UI state: greeting/waving",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "02_yashka_happy",
+      "path": "yashka-ui/02_yashka_happy.png",
+      "usage": "UI state: happy reaction",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "03_yashka_thinking",
+      "path": "yashka-ui/03_yashka_thinking.png",
+      "usage": "UI state: thinking",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "04_yashka_support",
+      "path": "yashka-ui/04_yashka_support.png",
+      "usage": "UI state: gentle support after an error",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "05_yashka_hint",
+      "path": "yashka-ui/05_yashka_hint.png",
+      "usage": "UI state: points to a hint or field",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    },
+    {
+      "id": "06_yashka_celebrate",
+      "path": "yashka-ui/06_yashka_celebrate.png",
+      "usage": "UI state: level completed / celebration",
+      "width": 512,
+      "height": 512,
+      "transparent": true
+    }
+  ]
+}
