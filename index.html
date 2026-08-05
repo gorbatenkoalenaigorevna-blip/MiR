@@ -11,16 +11,18 @@ button{font:inherit}button:focus-visible{outline:4px solid #ffd15c;outline-offse
 .hero{overflow:hidden;border-radius:30px;box-shadow:var(--shadow);border:4px solid #fff9;line-height:0;background:var(--milk)}
 .hero-image{display:block;width:100%;height:auto;object-fit:contain;pointer-events:none;user-select:none}
 .layout{display:grid;grid-template-columns:minmax(340px,1fr) 310px;gap:20px;margin-top:20px;align-items:start}.card{background:#fffaf0e8;border:3px solid #fff;border-radius:28px;box-shadow:var(--shadow)}
-.game-card{padding:18px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}.stat{padding:10px 5px;border-radius:17px;text-align:center;background:#fff;box-shadow:0 5px 18px #80442518}.stat b{display:block;color:var(--coral);font-size:23px}.stat small{font-size:12px;font-weight:900;text-transform:uppercase;color:#8b6b58}
-.game-row{display:flex;justify-content:center;gap:16px;align-items:flex-start}.board-wrap{position:relative;border-radius:22px;padding:9px;background:linear-gradient(150deg,#855237,#4c2c20);box-shadow:inset 0 0 0 3px #fff4,0 12px 30px #4d24194a}
-#game{display:block;width:min(300px,66vw);height:auto;border-radius:14px;background:#243d38}.overlay{position:absolute;inset:9px;display:none;place-content:center;text-align:center;border-radius:14px;background:#432c25df;color:#fff;padding:24px;z-index:3}.overlay.show{display:grid}.overlay h2{font-size:34px;margin:0 0 8px}.overlay p{margin:0 0 18px}.primary{border:0;border-radius:16px;background:linear-gradient(135deg,#ff8b72,#df544e);color:#fff;font-weight:900;padding:13px 20px;box-shadow:0 7px 0 #9f3c36;cursor:pointer}.primary:active{transform:translateY(4px);box-shadow:0 3px 0 #9f3c36}
-.mini{width:126px}.mini-card{background:#fff;border-radius:20px;padding:12px;text-align:center;margin-bottom:12px;border:2px solid #eed9ba}.mini h3{font-size:13px;text-transform:uppercase;margin:0 0 8px;color:#a45e45}.mini canvas{width:96px;height:82px}.bonus{border:0;width:100%;border-radius:20px;padding:13px 7px;background:linear-gradient(145deg,#ffe26f,#ff9d47);color:#713a1c;font-weight:900;cursor:pointer;box-shadow:0 7px 0 #d57632}.bonus:active:not(:disabled){transform:translateY(4px);box-shadow:0 3px 0 #d57632}.bonus:disabled{filter:grayscale(.7);opacity:.65;cursor:not-allowed}.bonus span{display:flex;align-items:center;justify-content:center;gap:4px;font-size:24px}.bonus-icon{display:block;width:38px;height:38px;object-fit:contain;pointer-events:none;user-select:none}.pause{width:100%;margin-top:12px;border:2px solid #d9b990;background:#fffaf0;color:#74452f;border-radius:15px;padding:10px;font-weight:900;cursor:pointer}
-.controls{display:flex;justify-content:center;gap:9px;margin-top:15px}.control{width:58px;height:52px;border:0;border-radius:17px;background:#fff;color:#874a37;font-size:25px;font-weight:900;box-shadow:0 6px 0 #d9b990;cursor:pointer;touch-action:manipulation}.control:active{transform:translateY(4px);box-shadow:0 2px 0 #d9b990}.control.rotate{background:#b8df87}.control.drop{background:#8dd4e2}
-.side{display:grid;gap:16px}.info{padding:20px}.info h2,.info h3{margin:0 0 12px;color:var(--berry)}.mission-row{display:flex;align-items:center;gap:10px}.mission-yashka{display:block;width:76px;height:auto;flex:none;object-fit:contain;pointer-events:none;user-select:none}.mission{flex:1;background:linear-gradient(135deg,#fff0bf,#ffd6c6);padding:15px;border-radius:19px;font-weight:800;line-height:1.35}.tips{display:grid;gap:9px;margin-top:12px}.tip{display:flex;gap:10px;align-items:center;background:#fff;padding:10px;border-radius:15px;font-size:14px;font-weight:700}.tip-icon,.tip-badge{display:grid;place-items:center;width:42px;height:42px;flex:none;object-fit:contain;font-style:normal;font-size:17px;font-weight:900;border-radius:12px;background:#f9e0bd;pointer-events:none;user-select:none}.tip-icon{padding:2px}
+.game-card{padding:18px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:14px}.stat{min-width:0;padding:10px 5px;border-radius:17px;text-align:center;background:#fff;box-shadow:0 5px 18px #80442518}.stat b{display:block;color:var(--coral);font-size:23px}.stat small{font-size:12px;font-weight:900;text-transform:uppercase;color:#8b6b58}
+.game-row{display:flex;justify-content:center;gap:18px;align-items:flex-start}.board-wrap{position:relative;border-radius:22px;padding:9px;background:linear-gradient(150deg,#855237,#4c2c20);box-shadow:inset 0 0 0 3px #fff4,0 12px 30px #4d24194a}
+#game{display:block;width:350px;max-width:100%;height:auto;border-radius:14px;background:#243d38}.overlay{position:absolute;inset:9px;display:none;place-content:center;text-align:center;border-radius:14px;background:#432c25df;color:#fff;padding:24px;z-index:3}.overlay.show{display:grid}.overlay h2{font-size:34px;margin:0 0 8px}.overlay p{margin:0 0 18px}.primary{border:0;border-radius:16px;background:linear-gradient(135deg,#ff8b72,#df544e);color:#fff;font-weight:900;padding:13px 20px;box-shadow:0 7px 0 #9f3c36;cursor:pointer}.primary:active{transform:translateY(4px);box-shadow:0 3px 0 #9f3c36}
+.mini{width:140px}.mini-card{background:#fff;border-radius:20px;padding:12px;text-align:center;margin-bottom:12px;border:2px solid #eed9ba}.mini h3{font-size:13px;text-transform:uppercase;margin:0 0 8px;color:#a45e45}.mini canvas{width:108px;height:auto}.bonus{border:0;width:100%;border-radius:20px;padding:15px 8px;background:linear-gradient(145deg,#ffe26f,#ff9d47);color:#713a1c;font-weight:900;cursor:pointer;box-shadow:0 7px 0 #d57632}.bonus:active:not(:disabled){transform:translateY(4px);box-shadow:0 3px 0 #d57632}.bonus:disabled{filter:grayscale(.7);opacity:.65;cursor:not-allowed}.bonus span{display:flex;align-items:center;justify-content:center;gap:4px;font-size:25px}.bonus-icon{display:block;width:42px;height:42px;object-fit:contain;pointer-events:none;user-select:none}.pause{width:100%;margin-top:12px;border:2px solid #d9b990;background:#fffaf0;color:#74452f;border-radius:15px;padding:12px;font-weight:900;cursor:pointer}
+.controls{display:flex;justify-content:center;gap:10px;margin-top:15px}.control{width:64px;height:58px;border:0;border-radius:17px;background:#fff;color:#874a37;font-size:27px;font-weight:900;box-shadow:0 6px 0 #d9b990;cursor:pointer;touch-action:manipulation}.control:active{transform:translateY(4px);box-shadow:0 2px 0 #d9b990}.control.rotate{background:#b8df87}.control.drop{background:#8dd4e2}
+.side{display:grid;gap:16px;min-width:0}.info{padding:20px}.info h2,.info h3{margin:0 0 12px;color:var(--berry)}.mission-row{display:flex;align-items:center;gap:10px;min-width:0}.mission-yashka{display:block;width:76px;height:auto;flex:none;object-fit:contain;pointer-events:none;user-select:none}.mission{min-width:0;flex:1;background:linear-gradient(135deg,#fff0bf,#ffd6c6);padding:15px;border-radius:19px;font-weight:800;line-height:1.35}.tips{display:grid;gap:9px;margin-top:12px}.tip{display:flex;gap:10px;align-items:center;background:#fff;padding:10px;border-radius:15px;font-size:14px;font-weight:700}.tip-icon,.tip-badge{display:grid;place-items:center;width:42px;height:42px;flex:none;object-fit:contain;font-style:normal;font-size:17px;font-weight:900;border-radius:12px;background:#f9e0bd;pointer-events:none;user-select:none}.tip-icon{padding:2px}
 .level-road{padding:18px}.road-head{display:flex;justify-content:space-between;align-items:center;font-weight:900}.track{height:16px;border:3px solid #fff;background:#e8d9bf;border-radius:999px;margin-top:12px;overflow:hidden}.track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#70a74d,#ffc75e,#ef6f61);border-radius:999px;transition:.4s}.keys{text-align:center;font-size:12px;color:#8f6e59;margin:12px 0 0}
+.learning-status{padding:16px 18px;display:grid;gap:7px;font-weight:900}.learning-status div{display:flex;justify-content:space-between;gap:12px}.learning-status b{color:var(--coral)}
+.learning-backdrop{position:fixed;inset:0;z-index:40;display:none;place-items:center;padding:18px;background:#35231fd9;overflow-y:auto}.learning-backdrop.show{display:grid}.learning-card{width:min(760px,96vw);background:#fffaf0;border:4px solid #fff;border-radius:28px;box-shadow:0 24px 70px #2917128c;padding:22px;text-align:center}.learning-head{display:flex;align-items:center;justify-content:center;gap:14px}.learning-yashka{width:90px;height:110px;object-fit:contain;flex:none}.learning-head h2{margin:0;color:var(--berry);font-size:30px}.question-count{margin:4px 0 0;color:#a45e45;font-weight:900}.question-text{margin:12px 0 18px;font-size:29px;color:var(--ink)}.answer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.answer{border:3px solid #eed9ba;border-radius:20px;background:#fff;padding:10px;min-width:0;color:var(--ink);font-weight:900;font-size:17px;cursor:pointer;transition:.18s}.answer:hover{transform:translateY(-2px)}.answer img{display:block;width:100%;height:150px;object-fit:contain;margin:auto}.answer.correct{border-color:#74ad4d;background:#e4f5c8;box-shadow:0 0 0 4px #acd875}.answer.wrong{border-color:#e78579;background:#ffe1dc}.answer:disabled{cursor:default}.answer-feedback{min-height:28px;margin:14px 0 0;font-size:20px;font-weight:900;color:var(--coral)}.answer-feedback.success{color:var(--green)}.learning-stars{margin-top:5px;font-weight:900}.reward-card{width:min(520px,94vw)}.reward-card h2{color:var(--berry);font-size:32px;margin:4px 0 8px}.reward-card p{font-size:21px;font-weight:900;margin:8px}.reward-visuals{display:flex;justify-content:center;align-items:center;gap:18px;margin:12px 0}.reward-visuals img{width:150px;height:150px;object-fit:contain}.reward-card .primary{margin:8px 0 10px}
 .toast{position:fixed;left:50%;top:45%;transform:translate(-50%,-30%) scale(.8);background:#fff;color:#b54f45;border:4px solid #ffd65b;padding:13px 22px;border-radius:999px;font-size:22px;font-weight:900;box-shadow:var(--shadow);opacity:0;pointer-events:none;z-index:20;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}.confetti{position:fixed;z-index:19;left:50%;top:45%;font-size:27px;pointer-events:none;animation:burst 1.15s ease-out forwards}@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
-@media(max-width:800px){.layout{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.game-row{gap:9px}.mini{width:104px}.mini canvas{width:78px}.stats{gap:5px}.stat b{font-size:19px}.stat small{font-size:9px}}
-@media(max-width:520px){.page{width:100%;padding-top:0}.hero{border-radius:0 0 25px 25px;border-width:0 0 4px}.layout{margin:12px 8px}.game-card{padding:10px}.game-row{gap:12px;flex-direction:column;align-items:center}.board-wrap{padding:6px}#game{width:min(300px,84vw)}.overlay{inset:6px}.mini{width:min(300px,84vw);display:grid;grid-template-columns:1fr 1fr;gap:8px}.mini-card{grid-row:span 2;margin:0;padding:7px}.mini canvas{width:90px;height:72px}.bonus{font-size:12px;padding:8px}.bonus-icon{width:32px;height:32px}.pause{font-size:12px;margin:0}.control{width:52px}.side{grid-template-columns:1fr}.mission-yashka{width:68px}.keys{display:none}}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.game-row{gap:12px}.mini{width:130px}.mini canvas{width:100px}.stats{gap:5px}.stat b{font-size:19px}.stat small{font-size:9px}}
+@media(max-width:520px){.page{width:100%;padding-top:0}.hero{border-radius:0 0 25px 25px;border-width:0 0 4px}.layout{margin:10px 6px}.game-card{padding:8px}.stats{margin-bottom:9px}.stat{padding:7px 3px}.game-row{width:100%;gap:8px;flex-direction:column;align-items:center}.board-wrap{width:min(332px,84vw);max-width:100%;padding:6px}#game{width:100%;height:auto}.overlay{inset:6px}.mini{width:min(332px,84vw);max-width:100%;display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:7px;align-items:stretch}.mini-card{grid-row:auto;margin:0;padding:5px}.mini h3{font-size:11px;margin-bottom:2px}.mini canvas{width:72px;height:58px}.bonus{font-size:11px;padding:5px 3px;border-radius:15px}.bonus span{font-size:19px}.bonus-icon{width:30px;height:30px}.pause{font-size:12px;padding:7px 3px;margin:0;border-radius:15px}.controls{gap:11px;margin-top:10px}.control{width:58px;height:56px}.side{grid-template-columns:1fr}.mission-yashka{width:68px}.keys{display:none}.learning-backdrop{padding:8px}.learning-card{width:100%;padding:12px;border-radius:22px}.learning-yashka{width:64px;height:78px}.learning-head h2{font-size:23px}.question-count{font-size:13px}.question-text{font-size:23px;margin:7px 0 10px}.answer-grid{grid-template-columns:1fr;gap:7px}.answer{display:grid;grid-template-columns:86px 1fr;align-items:center;padding:5px 12px;font-size:17px}.answer img{width:82px;height:82px;margin:0}.answer-feedback{font-size:17px;margin-top:8px;min-height:23px}.learning-stars{font-size:14px}.reward-card h2{font-size:27px}.reward-card p{font-size:18px}.reward-visuals{gap:8px}.reward-visuals img{width:115px;height:115px}}
 </style>
 </head>
 <body>
@@ -40,7 +42,7 @@ button{font:inherit}button:focus-visible{outline:4px solid #ffd15c;outline-offse
 
       <div class="game-row">
         <div class="board-wrap">
-          <canvas id="game" width="300" height="600" aria-label="Игровое поле"></canvas>
+          <canvas id="game" width="350" height="700" aria-label="Игровое поле"></canvas>
           <div class="overlay" id="overlay">
             <h2 id="overlayTitle">Пауза</h2>
             <p id="overlayText">Отдохни немного 🌷</p>
@@ -50,7 +52,7 @@ button{font:inherit}button:focus-visible{outline:4px solid #ffd15c;outline-offse
         <aside class="mini">
           <div class="mini-card">
             <h3>Дальше</h3>
-            <canvas id="next" width="120" height="100"></canvas>
+            <canvas id="next" width="140" height="116"></canvas>
           </div>
           <button class="bonus" id="rocket" disabled><span><img class="bonus-icon" src="assets/mir-tetris/bonuses/02_rocket.png" alt=""> × <b id="rockets">0</b></span>Убрать ряд</button>
           <button class="pause" id="pause">⏸ Пауза</button>
@@ -71,7 +73,7 @@ button{font:inherit}button:focus-visible{outline:4px solid #ffd15c;outline-offse
         <h2>Звёздная миссия</h2>
         <div class="mission-row">
           <img class="mission-yashka" src="assets/mir-tetris/yashka-ui/05_yashka_hint.png" alt="Яшка подсказывает">
-          <div class="mission" id="mission">Очисти ещё 8 линий, чтобы перейти на новый уровень!</div>
+          <div class="mission" id="mission">Очисти ещё 3 линии, чтобы перейти на новый уровень!</div>
         </div>
         <div class="tips">
           <div class="tip"><img class="tip-icon" src="assets/mir-tetris/bonuses/01_star_cube.png" alt=""><span>Очисти линию со звездой — получишь ракету.</span></div>
@@ -80,28 +82,64 @@ button{font:inherit}button:focus-visible{outline:4px solid #ffd15c;outline-offse
         </div>
       </section>
       <section class="card level-road">
-        <div class="road-head"><span>Путь к уровню <b id="nextLevel">2</b></span><span id="progressText">0 / 8</span></div>
+        <div class="road-head"><span>Путь к уровню <b id="nextLevel">2</b></span><span id="progressText">0 / 3</span></div>
         <div class="track"><span id="progress"></span></div>
+      </section>
+      <section class="card learning-status" aria-label="Награды за задания">
+        <div><span>Звёзды:</span><b id="learningStars">0 / 3</b></div>
+        <div><span>Фишки Яшки:</span><b id="chipCount">0 / 9</b></div>
       </section>
     </aside>
   </main>
 </div>
 <div class="toast" id="toast"></div>
+<div class="learning-backdrop" id="questionModal" role="dialog" aria-modal="true" aria-labelledby="questionTitle">
+  <section class="learning-card">
+    <div class="learning-head">
+      <img class="learning-yashka" src="assets/mir-tetris/yashka-ui/03_yashka_thinking.png" alt="Яшка задаёт вопрос">
+      <div><h2 id="questionTitle">Задание Яшки</h2><p class="question-count" id="questionCount">Вопрос 1 из 3</p></div>
+    </div>
+    <h3 class="question-text" id="questionText"></h3>
+    <div class="answer-grid" id="answerGrid"></div>
+    <p class="answer-feedback" id="answerFeedback" aria-live="polite"></p>
+    <div class="learning-stars">⭐ Звёзды: <b id="modalStars">0 / 3</b></div>
+  </section>
+</div>
+<div class="learning-backdrop" id="rewardModal" role="dialog" aria-modal="true" aria-labelledby="rewardTitle">
+  <section class="learning-card reward-card">
+    <h2 id="rewardTitle">Ура! Первый уровень пройден!</h2>
+    <p>Открыта первая фишка Яшки!</p>
+    <div class="reward-visuals">
+      <img src="assets/mir-tetris/yashka-ui/06_yashka_celebrate.png" alt="Яшка празднует">
+      <img src="assets/mir-tetris/yashka-chips/01_yashka_raduetsya.png" alt="Первая фишка Яшки">
+    </div>
+    <button class="primary" id="continueAfterReward">Продолжить игру</button>
+  </section>
+</div>
 
 <script>
 const $=s=>document.querySelector(s),game=$('#game'),ctx=game.getContext('2d'),preview=$('#next'),pctx=preview.getContext('2d');
-const COLS=10,ROWS=20,S=30,EMPTY=()=>Array(COLS).fill(null);
+const COLS=10,S=35,LINES_PER_LEVEL=3,EMPTY=()=>Array(COLS).fill(null);
+let ROWS=20;
 const pieces=[
  {s:[[1,1,1,1]],c:0},{s:[[1,1],[1,1]],c:1},{s:[[1,1,1],[0,1,0]],c:2},
  {s:[[1,1,1],[1,0,0]],c:3},{s:[[1,1,1],[0,0,1]],c:4},
  {s:[[1,1,0],[0,1,1]],c:5},{s:[[0,1,1],[1,1,0]],c:6}
 ];
 const colors=[['#62c9e0','#3196b8'],['#ffd45c','#efa43d'],['#d78ac7','#9d5ba3'],['#ff9b63','#dc664c'],['#85b85c','#4b8b4e'],['#f07878','#c64d5c'],['#84d6a2','#3da47c']];
-let board,player,nextId,points,totalLines,currentLevel,rockets,combo,paused,gameOver,lastDrop,dropDelay;
+const questions=[
+ {text:'Кто мяукает?',correct:'cat',answers:[['cat','кошка','06_cat.png'],['dog','собака','07_dog.png'],['fish','рыба','14_fish.png']]},
+ {text:'Что летает?',correct:'airplane',answers:[['airplane','самолёт','03_airplane.png'],['car','машинка','02_car.png'],['apple','яблоко','04_apple.png']]},
+ {text:'Что надевают зимой?',correct:'hat',answers:[['hat','шапка','23_winter_hat.png'],['cup','чашка','05_cup.png'],['flower','цветок','08_flower.png']]}
+];
+let board,player,nextId,points,totalLines,currentLevel,rockets,combo,paused,gameOver,lastDrop,dropDelay,learningStars,answeredQuestions,questionActive,rewardActive,answerLocked;
 let record=Number(localStorage.getItem('mir-tetris-record')||0),toastTimer;
+let firstChipUnlocked=localStorage.getItem('mir-tetris-first-chip')==='1';
 
 function newGame(){
- board=Array.from({length:ROWS},EMPTY);points=0;totalLines=0;currentLevel=1;rockets=0;combo=0;paused=false;gameOver=false;dropDelay=850;
+ ROWS=matchMedia('(max-width:520px)').matches?14:20;game.width=COLS*S;game.height=ROWS*S;
+ board=Array.from({length:ROWS},EMPTY);points=0;totalLines=0;currentLevel=1;rockets=0;combo=0;paused=false;gameOver=false;dropDelay=850;learningStars=0;answeredQuestions=new Set;questionActive=false;rewardActive=false;answerLocked=false;
+ $('#questionModal').classList.remove('show');$('#rewardModal').classList.remove('show');
  nextId=randomPiece();spawn();lastDrop=performance.now();hideOverlay();updateUI();draw();
 }
 function randomPiece(){return Math.random()*pieces.length|0}
@@ -136,9 +174,11 @@ function clearRows(){
  combo++;board=board.filter((_,y)=>!full.includes(y));while(board.length<ROWS)board.unshift(EMPTY());
  let count=full.length,base=[0,100,300,500,800][count]*currentLevel,comboBonus=(combo-1)*50*currentLevel,starBonus=stars*250*currentLevel;
  points+=base+comboBonus+starBonus;totalLines+=count;if(stars)rockets+=stars;if(count===4)rockets++;
- let old=currentLevel;currentLevel=Math.floor(totalLines/8)+1;dropDelay=Math.max(150,850-(currentLevel-1)*75);
+ let old=currentLevel,nextCalculatedLevel=Math.floor(totalLines/LINES_PER_LEVEL)+1;
+ if(!(currentLevel===1&&nextCalculatedLevel>1))currentLevel=nextCalculatedLevel;
+ dropDelay=Math.max(150,850-(currentLevel-1)*75);
  if(currentLevel>old)celebrate(`Уровень ${currentLevel}! 🌟`,true);else if(stars)celebrate(`Звезда! +${stars} 🚀`,true);else if(count===4)celebrate('Супер! 4 линии! 🎉',true);else if(combo>1)celebrate(`Комбо ×${combo}!`,false);else celebrate(`+${base} очков`,false);
- updateUI();
+ updateUI();if(currentLevel===1&&pendingQuestionIndex()>=0){paused=true;updateUI();setTimeout(showNextQuestion,250)}
 }
 function useRocket(){
  if(paused||gameOver||!rockets)return;let row=-1;for(let y=ROWS-1;y>=0;y--)if(board[y].some(Boolean)){row=y;break}
@@ -147,12 +187,32 @@ function useRocket(){
 function updateUI(){
  if(points>record){record=points;localStorage.setItem('mir-tetris-record',record)}
  $('#score').textContent=points;$('#level').textContent=currentLevel;$('#lines').textContent=totalLines;$('#best').textContent=record;$('#rockets').textContent=rockets;
- $('#rocket').disabled=!rockets||paused||gameOver;let part=totalLines%8,left=8-part;$('#nextLevel').textContent=currentLevel+1;$('#progressText').textContent=`${part} / 8`;$('#progress').style.width=`${part/8*100}%`;
- $('#mission').textContent=left===1?'Осталась 1 линия до нового уровня!':`Очисти ещё ${left} линий, чтобы перейти на новый уровень!`;
+ $('#rocket').disabled=!rockets||paused||gameOver;let waitingForFirstReward=currentLevel===1&&totalLines>=LINES_PER_LEVEL,part=waitingForFirstReward?LINES_PER_LEVEL:totalLines%LINES_PER_LEVEL,left=LINES_PER_LEVEL-part;$('#nextLevel').textContent=currentLevel+1;$('#progressText').textContent=`${part} / ${LINES_PER_LEVEL}`;$('#progress').style.width=`${part/LINES_PER_LEVEL*100}%`;
+ $('#mission').textContent=waitingForFirstReward?'Ответь на задание Яшки, чтобы перейти на новый уровень!':`Очисти ещё ${left} ${left===1?'линию':'линии'}, чтобы перейти на новый уровень!`;
+ $('#learningStars').textContent=`${learningStars} / 3`;$('#modalStars').textContent=`${learningStars} / 3`;$('#chipCount').textContent=`${firstChipUnlocked?1:0} / 9`;
+}
+function pendingQuestionIndex(){return questions.findIndex((_,i)=>totalLines>=i+1&&!answeredQuestions.has(i))}
+function showNextQuestion(){
+ if(gameOver||questionActive||rewardActive||currentLevel!==1)return;let index=pendingQuestionIndex();if(index<0)return;
+ questionActive=true;answerLocked=false;paused=true;let question=questions[index];$('#questionCount').textContent=`Вопрос ${index+1} из 3`;$('#questionText').textContent=question.text;$('#answerFeedback').textContent='';$('#answerFeedback').className='answer-feedback';
+ let grid=$('#answerGrid');grid.replaceChildren();question.answers.forEach(([id,label,file])=>{let button=document.createElement('button');button.className='answer';button.dataset.answer=id;button.innerHTML=`<img src="assets/mir-tetris/question-objects/${file}" alt=""><span>${label}</span>`;button.onclick=()=>checkAnswer(button,index,id);grid.append(button)});
+ $('#questionModal').classList.add('show');updateUI();
+}
+function checkAnswer(button,index,id){
+ if(answerLocked||!questionActive)return;let feedback=$('#answerFeedback');
+ if(id!==questions[index].correct){button.classList.add('wrong');feedback.textContent='Попробуй ещё раз';setTimeout(()=>button.classList.remove('wrong'),550);return}
+ answerLocked=true;answeredQuestions.add(index);learningStars++;button.classList.add('correct');document.querySelectorAll('#answerGrid .answer').forEach(answer=>answer.disabled=true);feedback.textContent='Верно! Получаешь звёздочку!';feedback.classList.add('success');updateUI();
+ setTimeout(()=>{questionActive=false;$('#questionModal').classList.remove('show');if(answeredQuestions.size===3&&totalLines>=LINES_PER_LEVEL){showFirstLevelReward();return}if(pendingQuestionIndex()>=0){showNextQuestion();return}paused=false;lastDrop=performance.now();updateUI()},900);
+}
+function showFirstLevelReward(){
+ rewardActive=true;paused=true;firstChipUnlocked=true;localStorage.setItem('mir-tetris-first-chip','1');$('#rewardModal').classList.add('show');updateUI();celebrate('Три звёздочки! ⭐',true);
+}
+function continueAfterFirstReward(){
+ if(!rewardActive)return;rewardActive=false;$('#rewardModal').classList.remove('show');currentLevel=Math.floor(totalLines/LINES_PER_LEVEL)+1;dropDelay=Math.max(150,850-(currentLevel-1)*75);paused=false;lastDrop=performance.now();updateUI();celebrate(`Уровень ${currentLevel}! 🌟`,true);
 }
 function endGame(){gameOver=true;showOverlay('Игра окончена',`Ты набрал ${points} очков! 🌟`,'Играть снова');updateUI()}
 function togglePause(){
- if(gameOver)return;if(paused){paused=false;hideOverlay();lastDrop=performance.now()}else{paused=true;showOverlay('Пауза','Отдохни немного 🌷','Продолжить')}updateUI();
+ if(gameOver||questionActive||rewardActive)return;if(paused){paused=false;hideOverlay();lastDrop=performance.now()}else{paused=true;showOverlay('Пауза','Отдохни немного 🌷','Продолжить')}updateUI();
 }
 function showOverlay(title,text,button){$('#overlayTitle').textContent=title;$('#overlayText').textContent=text;$('#overlayButton').textContent=button;$('#overlay').classList.add('show')}
 function hideOverlay(){$('#overlay').classList.remove('show')}
@@ -173,7 +233,7 @@ function draw(){
  player.shape.forEach((row,y)=>row.forEach((v,x)=>v&&cell(ctx,player.x+x,player.y+y,{color:player.color,star:player.star===`${y},${x}`})));
 }
 function drawPreview(){
- pctx.clearRect(0,0,preview.width,preview.height);let piece=pieces[nextId],shape=piece.s,size=23,ox=(preview.width-shape[0].length*size)/2,oy=(preview.height-shape.length*size)/2;
+ pctx.clearRect(0,0,preview.width,preview.height);let piece=pieces[nextId],shape=piece.s,size=27,ox=(preview.width-shape[0].length*size)/2,oy=(preview.height-shape.length*size)/2;
  pctx.save();pctx.translate(ox,oy);shape.forEach((row,y)=>row.forEach((v,x)=>v&&cell(pctx,x,y,{color:piece.c,star:false},size)));pctx.restore();
 }
 function loop(now){if(!paused&&!gameOver&&now-lastDrop>dropDelay){down();lastDrop=now}requestAnimationFrame(loop)}
@@ -181,6 +241,7 @@ function action(name){if(name==='left')move(-1);if(name==='right')move(1);if(nam
 document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('pointerdown',()=>action(b.dataset.action)));
 document.addEventListener('keydown',e=>{let keys=['ArrowLeft','ArrowRight','ArrowDown','ArrowUp',' ','b','B','p','P'];if(keys.includes(e.key))e.preventDefault();if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1);if(e.key==='ArrowDown')down(true);if(e.key==='ArrowUp')rotate();if(e.key===' ')hardDrop();if(e.key.toLowerCase()==='b')useRocket();if(e.key.toLowerCase()==='p')togglePause()});
 $('#rocket').onclick=useRocket;$('#pause').onclick=togglePause;$('#overlayButton').onclick=()=>gameOver?newGame():togglePause();
+$('#continueAfterReward').onclick=continueAfterFirstReward;
 newGame();requestAnimationFrame(loop);
 </script>
 </body>
