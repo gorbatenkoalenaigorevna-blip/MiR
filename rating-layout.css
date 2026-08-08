@@ -34,6 +34,7 @@
 .avatar-choice-name{display:block;max-width:100%;overflow:hidden;color:#684a5d;font-size:clamp(9px,.72vw,12px);font-weight:900;line-height:1.15;text-overflow:ellipsis;white-space:nowrap}
 .profile-hero>.profile-avatar,.house-rating>.rating-circle-avatar{visibility:hidden}
 .house-avatar-anchor{position:absolute;z-index:3;left:2.8%;top:5.8%;width:19%;aspect-ratio:1;border-radius:50%;overflow:hidden;pointer-events:none}
+.house-avatar-anchor-profile{transform:translateX(40px)}
 .house-avatar-slot{position:absolute;inset:0;display:grid;place-items:center;border-radius:inherit;overflow:hidden}
 .house-avatar-slot>img{grid-area:1/1;display:block;max-width:100%;max-height:100%;object-fit:contain;object-position:50% 50%}
 .house-avatar-profile .house-avatar-frame{z-index:2;width:82%;height:82%}
