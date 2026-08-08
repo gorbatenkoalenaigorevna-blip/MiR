@@ -1,21 +1,21 @@
 (function(){
   "use strict";
   const A="assets/profile/",AVATAR_BASE="MIR_PROFILE_RATING_ASSETS/avatars/",avatars=[
-    {id:"rabbit",name:"Зайчонок",file:"01-rabbit.png",avatarDisplay:{scale:.86,x:0,y:2}},
-    {id:"fox",name:"Лисёнок",file:"02-fox.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"chipmunk",name:"Бурундучок",file:"03-chipmunk.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"squirrel",name:"Белочка",file:"04-squirrel.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"owl",name:"Совёнок",file:"05-owl.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"bear",name:"Медвежонок",file:"06-bear.png",avatarDisplay:{scale:.92,x:0,y:1}},
-    {id:"hedgehog",name:"Ёжик",file:"07-hedgehog.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"raccoon",name:"Енотик",file:"08-raccoon.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"deer",name:"Оленёнок",file:"09-deer.png",avatarDisplay:{scale:.86,x:0,y:2}},
-    {id:"mouse",name:"Мышонок",file:"10-mouse.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"beaver",name:"Бобрёнок",file:"11-beaver.png",avatarDisplay:{scale:.91,x:0,y:1}},
-    {id:"otter",name:"Выдрёнок",file:"12-otter.png",avatarDisplay:{scale:.91,x:0,y:1}},
-    {id:"badger",name:"Барсучонок",file:"13-badger.png",avatarDisplay:{scale:.9,x:0,y:1}},
-    {id:"lynx",name:"Рысёнок",file:"14-lynx.png",avatarDisplay:{scale:.86,x:0,y:2}},
-    {id:"wolf",name:"Волчонок",file:"15-wolf.png",avatarDisplay:{scale:.88,x:0,y:2}}
+    {id:"rabbit",name:"Зайчонок",file:"01-rabbit.png",avatarDisplay:{scale:1.06,x:0,y:3}},
+    {id:"fox",name:"Лисёнок",file:"02-fox.png",avatarDisplay:{scale:1.15,x:0,y:4}},
+    {id:"chipmunk",name:"Бурундучок",file:"03-chipmunk.png",avatarDisplay:{scale:1.14,x:0,y:3}},
+    {id:"squirrel",name:"Белочка",file:"04-squirrel.png",avatarDisplay:{scale:1.08,x:0,y:4}},
+    {id:"owl",name:"Совёнок",file:"05-owl.png",avatarDisplay:{scale:1.14,x:0,y:3}},
+    {id:"bear",name:"Медвежонок",file:"06-bear.png",avatarDisplay:{scale:1.14,x:0,y:3}},
+    {id:"hedgehog",name:"Ёжик",file:"07-hedgehog.png",avatarDisplay:{scale:1.14,x:0,y:3}},
+    {id:"raccoon",name:"Енотик",file:"08-raccoon.png",avatarDisplay:{scale:1.14,x:0,y:3}},
+    {id:"deer",name:"Оленёнок",file:"09-deer.png",avatarDisplay:{scale:1.06,x:0,y:3}},
+    {id:"mouse",name:"Мышонок",file:"10-mouse.png",avatarDisplay:{scale:1.12,x:0,y:3}},
+    {id:"beaver",name:"Бобрёнок",file:"11-beaver.png",avatarDisplay:{scale:1.15,x:0,y:3}},
+    {id:"otter",name:"Выдрёнок",file:"12-otter.png",avatarDisplay:{scale:1.15,x:0,y:3}},
+    {id:"badger",name:"Барсучонок",file:"13-badger.png",avatarDisplay:{scale:1.14,x:0,y:3}},
+    {id:"lynx",name:"Рысёнок",file:"14-lynx.png",avatarDisplay:{scale:1.06,x:0,y:3}},
+    {id:"wolf",name:"Волчонок",file:"15-wolf.png",avatarDisplay:{scale:1.1,x:0,y:3}}
   ],avatarFiles=avatars.map(x=>x.file),avatarNames=avatars.map(x=>x.name);
   const $=s=>document.querySelector(s),gate=$("#profileGate"),createView=$("#createView"),chooseView=$("#chooseView"),profileModal=$("#profileModal"),ratingModal=$("#ratingModal"),picker=$("#avatarPicker");let selectedAvatar=0,lastFocus=null,ratingTab="mine",lastGeneratedNick="";
   const avatarIndex=value=>{const numeric=Number(value);return Number.isInteger(numeric)&&numeric>=1&&numeric<=avatars.length?numeric:1},avatarSrc=value=>`${AVATAR_BASE}${avatars[avatarIndex(value)-1].file}`;
