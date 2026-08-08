@@ -1,0 +1,17 @@
+[
+  {"id":"rabbit","name":"Зайчонок","file":"01-rabbit.png"},
+  {"id":"fox","name":"Лисёнок","file":"02-fox.png"},
+  {"id":"chipmunk","name":"Бурундучок","file":"03-chipmunk.png"},
+  {"id":"squirrel","name":"Белочка","file":"04-squirrel.png"},
+  {"id":"owl","name":"Совёнок","file":"05-owl.png"},
+  {"id":"bear","name":"Медвежонок","file":"06-bear.png"},
+  {"id":"hedgehog","name":"Ёжик","file":"07-hedgehog.png"},
+  {"id":"raccoon","name":"Енотик","file":"08-raccoon.png"},
+  {"id":"deer","name":"Оленёнок","file":"09-deer.png"},
+  {"id":"mouse","name":"Мышонок","file":"10-mouse.png"},
+  {"id":"beaver","name":"Бобрёнок","file":"11-beaver.png"},
+  {"id":"otter","name":"Выдрёнок","file":"12-otter.png"},
+  {"id":"badger","name":"Барсучонок","file":"13-badger.png"},
+  {"id":"lynx","name":"Рысёнок","file":"14-lynx.png"},
+  {"id":"wolf","name":"Волчонок","file":"15-wolf.png"}
+]

@@ -32,8 +32,6 @@
 .avatar-picker .avatar-choice{display:grid;grid-template-rows:auto minmax(1.2em,auto);align-content:start;justify-items:center;aspect-ratio:auto;min-width:0;padding:4px}
 .avatar-picker .avatar-choice img:first-child{width:100%;height:auto;aspect-ratio:1;object-fit:contain;object-position:center}
 .avatar-choice-name{display:block;max-width:100%;overflow:hidden;color:#684a5d;font-size:clamp(9px,.72vw,12px);font-weight:900;line-height:1.15;text-overflow:ellipsis;white-space:nowrap}
-.create-avatar-preview #createAvatarPreview[src$="16-frog.png"]{width:66%;height:66%;object-fit:contain;object-position:center;transform:translateY(-8%)}
-.house-rating>.rating-circle-avatar[src$="16-frog.png"]{padding:18%;object-fit:contain;object-position:center}
 .profile-hero>.profile-avatar,.house-rating>.rating-circle-avatar{visibility:hidden}
 .house-avatar-anchor{position:absolute;z-index:3;left:2.8%;top:5.8%;width:19%;aspect-ratio:1;border-radius:50%;overflow:hidden;pointer-events:none}
 .house-avatar-slot{position:absolute;inset:0;display:grid;place-items:center;border-radius:inherit;overflow:hidden}
@@ -41,19 +39,17 @@
 .house-avatar-profile .house-avatar-frame{z-index:2;width:82%;height:82%}
 .house-avatar-profile .house-avatar-animal{z-index:1;width:52%;height:52%}
 .house-avatar-rating .house-avatar-animal{width:78%;height:78%;padding:8%;box-sizing:border-box}
-.house-avatar-profile .house-avatar-animal[src$="16-frog.png"]{width:48%;height:70%;object-position:50% 28%}
-.house-avatar-rating .house-avatar-animal[src$="16-frog.png"]{width:70%;height:100%;padding:8%;object-position:50% 28%}
 .avatar-shell{position:relative;display:grid;place-items:center;aspect-ratio:1;border-radius:50%;overflow:hidden;isolation:isolate;flex:none}
 .avatar-shell>.avatar-animal,.house-avatar-slot>.avatar-animal{grid-area:1/1;z-index:1;display:block;width:80%!important;height:80%!important;padding:0!important;border-radius:0!important;background:transparent!important;object-fit:contain!important;object-position:50% 50%!important;transform:translate(var(--avatar-x,0),var(--avatar-y,0)) scale(var(--avatar-scale,1));transform-origin:center}
 .avatar-shell>.avatar-frame-layer,.house-avatar-slot>.avatar-frame-layer{grid-area:1/1;z-index:2;display:block;width:100%!important;height:100%!important;border-radius:0!important;object-fit:contain!important;pointer-events:none}
 .avatar-picker .avatar-choice>.avatar-shell{width:100%;height:auto}
+.profile-actions{align-items:center;gap:12px}.profile-danger{min-height:42px;padding:.65em 1.35em;border:2px solid #e3a49e;border-radius:999px;background:#fff6f2;color:#9b4742;font-weight:900;cursor:pointer}.profile-danger:hover{background:#ffe8e3}.profile-danger:focus-visible{outline:3px solid #f3b6ae;outline-offset:3px}.house-rating>.empty-rating{display:grid;place-items:center;width:100%;height:100%;margin:0;color:#765b70;font-size:clamp(16px,1.5vw,23px);font-weight:900;text-align:center}
 .avatar-picker .avatar-choice[aria-checked="true"]>.avatar-shell{filter:drop-shadow(0 0 7px #f7bd42);}
 .create-avatar-preview>.avatar-shell{width:82%;height:82%}
 .profile-choice>.avatar-shell{width:92px;height:92px}
 .profile-chip>.avatar-shell{width:32px;height:32px}
 .podium-card>.avatar-shell.rating-avatar,.rating-list>.rating-row>.avatar-shell.rating-avatar{overflow:hidden}
 .house-avatar-profile .house-avatar-frame{width:82%!important;height:82%!important}.house-avatar-profile .house-avatar-animal{width:52%!important;height:52%!important}.house-avatar-rating .house-avatar-animal{width:72%!important;height:72%!important}
-.house-avatar-slot>.avatar-animal[src$="16-frog.png"]{object-position:50% 50%!important}
 .avatar-frame-layer,.house-avatar-frame{display:none!important}
 .avatar-shell{border:1.5px solid #d8ad62;background:#fff5dd80;box-shadow:inset 0 0 0 1px #fff9e6}
 .avatar-shell>.avatar-animal,.house-avatar-slot>.avatar-animal{width:78%!important;height:78%!important}
@@ -66,3 +62,10 @@
 @media(max-width:600px){.gate-panel .create-avatar-preview{position:sticky;left:0;top:0}}
 @media(max-width:900px){.rating-content{top:13%;bottom:10%}.rating-list>.rating-row{grid-template-columns:30px 40px minmax(90px,1fr) minmax(62px,auto)}.rating-list>.rating-row .rating-rank{display:none}.podium-card .rating-rank{display:-webkit-box}}
 @media(max-width:600px){.profile-overlay{overflow-y:auto;place-items:start center}.rating-panel{min-height:560px}.rating-content{left:8%;right:8%;top:12%;bottom:10%;max-height:78%}.rating-content h2{font-size:clamp(19px,6vw,27px)}.rating-tabs button{padding:.45em .65em}.rating-podium{gap:4px}.rating-row.podium-card{grid-template-columns:1fr;grid-template-rows:auto auto auto;justify-items:center;min-height:112px;padding:5px 3px;text-align:center}.podium-card.podium-gold{min-height:120px}.podium-place{position:absolute;grid-row:auto;margin-left:-8%;transform:translate(-18px,-2px)}.podium-place img{width:30px!important;height:30px!important}.podium-place b,.podium-card .rating-rank{display:none}.podium-card>.rating-avatar{grid-row:auto;width:clamp(42px,13vw,54px);height:clamp(42px,13vw,54px)}.podium-card .rating-nick{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(12px,3.8vw,16px)}.podium-card .rating-sparks{grid-column:auto;justify-content:center}.rating-list>.rating-row{grid-template-columns:24px 34px minmax(0,1fr) auto;min-height:54px;padding-inline:6px}.rating-list .rating-avatar{width:34px;height:34px}.rating-list>.rating-row>span:nth-of-type(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rating-list .rating-sparks img{width:22px;height:22px}}
+
+/* Shared avatar component: one circular crop and one display model everywhere. */
+.avatar-shell,.house-avatar-slot{position:relative;display:grid;place-items:center;aspect-ratio:1;border:1.5px solid #d8ad62;border-radius:50%;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 50% 38%,#fffaf0 0 62%,#f4dfbd 100%);box-shadow:inset 0 0 0 1px #fff9e6;box-sizing:border-box}
+.avatar-shell>.avatar-animal,.house-avatar-slot>.avatar-animal{grid-area:1/1;z-index:1;display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;padding:5.5%!important;box-sizing:border-box;border:0!important;border-radius:0!important;background:transparent!important;object-fit:contain!important;object-position:center!important;transform:translate(var(--avatar-x,0),var(--avatar-y,0)) scale(var(--avatar-scale,1))!important;transform-origin:center!important;-webkit-mask-image:linear-gradient(to bottom,#000 0 89%,rgba(0,0,0,.96) 94%,rgba(0,0,0,.78) 100%);mask-image:linear-gradient(to bottom,#000 0 89%,rgba(0,0,0,.96) 94%,rgba(0,0,0,.78) 100%);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.create-avatar-preview>.avatar-shell{width:100%;height:100%;border:0;background:radial-gradient(circle at 50% 38%,#fffaf0 0 62%,#f4dfbd 100%);box-shadow:inset 0 0 0 1.5px #d8ad62}
+.house-avatar-profile .house-avatar-animal,.house-avatar-rating .house-avatar-animal{width:100%!important;height:100%!important}
+.avatar-picker .avatar-choice>.avatar-shell{width:100%;height:auto}
