@@ -1,0 +1,128 @@
+{
+  "title": "Лес звуков",
+  "roundsPerGame": 10,
+  "startingLives": 3,
+  "shuffleRounds": true,
+  "shuffleOptions": true,
+  "randomTargetWithinPair": true,
+  "repeatAudioHasPenalty": false,
+  "screens": {
+    "card": "assets/screens/game-card.png",
+    "start": "assets/screens/start-screen.png",
+    "background": "assets/screens/game-background.png",
+    "victory": "assets/screens/victory-screen.png"
+  },
+  "portals": {
+    "inner": "assets/portals/portal-inner-disc.png",
+    "idle": "assets/portals/portal-idle.png",
+    "selected": "assets/portals/portal-selected.png",
+    "correct": "assets/portals/portal-correct.png",
+    "wrong": "assets/portals/portal-wrong.png"
+  },
+  "yashka": {
+    "ready": "assets/yashka/yashka-ready.png",
+    "runRight": "assets/yashka/yashka-run-right.png",
+    "runLeft": "assets/yashka/yashka-run-left.png",
+    "surprised": "assets/yashka/yashka-surprised.png",
+    "victory": "assets/yashka/yashka-victory.png"
+  },
+  "fog": {
+    "chasing": "assets/fog/fog-chasing.png",
+    "closer": "assets/fog/fog-closer.png",
+    "blownBack": "assets/fog/fog-blown-back.png",
+    "defeated": "assets/fog/fog-defeated-crying.png"
+  },
+  "ui": {
+    "listenButton": "assets/ui/audio-repeat-button.png",
+    "helpButton": "assets/ui/help-button.png",
+    "instructionPanel": "assets/ui/instruction-panel.png",
+    "chaseTrack": "assets/ui/chase-track.png",
+    "crystalWhole": "assets/ui/crystal-whole.png",
+    "crystalGlowing": "assets/ui/crystal-glowing.png",
+    "crystalLost": "assets/ui/crystal-lost.png"
+  },
+  "rewardEffects": {
+    "burst": "assets/reward-effects/portal-success-burst.png",
+    "trail": "assets/reward-effects/golden-sparkle-trail.png",
+    "rescuedLight": "assets/reward-effects/rescued-light.png"
+  },
+  "sounds": {
+    "roundStart": "assets/audio/sfx/round-start.mp3",
+    "correct": "assets/audio/sfx/correct-answer.mp3",
+    "wrong": "assets/audio/sfx/gentle-error.mp3",
+    "fogApproaches": "assets/audio/sfx/fog-approaches.mp3",
+    "victory": "assets/audio/sfx/victory.mp3"
+  },
+  "pairs": [
+    {
+      "id": "kosa-koza",
+      "options": [
+        { "word": "коса", "image": "assets/answers/kosa-scythe.png", "audio": "assets/audio/words/kosa.mp3" },
+        { "word": "коза", "image": "assets/answers/koza-goat.png", "audio": "assets/audio/words/koza.mp3" }
+      ]
+    },
+    {
+      "id": "miska-mishka",
+      "options": [
+        { "word": "миска", "image": "assets/answers/miska-bowl.png", "audio": "assets/audio/words/miska.mp3" },
+        { "word": "мишка", "image": "assets/answers/mishka-teddy.png", "audio": "assets/audio/words/mishka.mp3" }
+      ]
+    },
+    {
+      "id": "usy-ushi",
+      "options": [
+        { "word": "усы", "image": "assets/answers/usy-moustache.png", "audio": "assets/audio/words/usy.mp3" },
+        { "word": "уши", "image": "assets/answers/ushi-ears.png", "audio": "assets/audio/words/ushi.mp3" }
+      ]
+    },
+    {
+      "id": "nos-nozh",
+      "options": [
+        { "word": "нос", "image": "assets/answers/nos-nose.png", "audio": "assets/audio/words/nos.mp3" },
+        { "word": "нож", "image": "assets/answers/nozh-knife.png", "audio": "assets/audio/words/nozh.mp3" }
+      ]
+    },
+    {
+      "id": "krysa-krysha",
+      "options": [
+        { "word": "крыса", "image": "assets/answers/krysa-rat.png", "audio": "assets/audio/words/krysa.mp3" },
+        { "word": "крыша", "image": "assets/answers/krysha-roof.png", "audio": "assets/audio/words/krysha.mp3" }
+      ]
+    },
+    {
+      "id": "suk-zhuk",
+      "options": [
+        { "word": "сук", "image": "assets/answers/suk-bough.png", "audio": "assets/audio/words/suk.mp3" },
+        { "word": "жук", "image": "assets/answers/zhuk-beetle.png", "audio": "assets/audio/words/zhuk.mp3" }
+      ]
+    },
+    {
+      "id": "les-lev",
+      "options": [
+        { "word": "лес", "image": "assets/answers/les-forest.png", "audio": "assets/audio/words/les.mp3" },
+        { "word": "лев", "image": "assets/answers/lev-lion.png", "audio": "assets/audio/words/lev.mp3" }
+      ]
+    },
+    {
+      "id": "som-dom",
+      "options": [
+        { "word": "сом", "image": "assets/answers/som-catfish.png", "audio": "assets/audio/words/som.mp3" },
+        { "word": "дом", "image": "assets/answers/dom-house.png", "audio": "assets/audio/words/dom.mp3" }
+      ]
+    },
+    {
+      "id": "lisa-lipa",
+      "options": [
+        { "word": "лиса", "image": "assets/answers/lisa-fox.png", "audio": "assets/audio/words/lisa.mp3" },
+        { "word": "липа", "image": "assets/answers/lipa-linden.png", "audio": "assets/audio/words/lipa.mp3" }
+      ]
+    },
+    {
+      "id": "rosa-roza",
+      "options": [
+        { "word": "роса", "image": "assets/answers/rosa-dew.png", "audio": "assets/audio/words/rosa.mp3" },
+        { "word": "роза", "image": "assets/answers/roza-rose.png", "audio": "assets/audio/words/roza.mp3" }
+      ]
+    }
+  ]
+}

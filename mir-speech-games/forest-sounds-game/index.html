@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#162b13">
+  <title>Лес звуков</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../games-ui.css">
+  <style>.start-button{display:grid;place-items:center}.start-button span{display:block;margin:0;color:#fff;font-size:clamp(34px,4vw,68px);line-height:1;text-shadow:0 2px 4px #4d260788}</style>
+  <style>.portal-row{inset:0;display:block}.portal{position:absolute;width:20%;transform:translate(-50%,-50%)}.portal:nth-child(1){left:25.718%;top:32.412%}.portal:nth-child(2){left:74.282%;top:32.412%}.portal:not(:disabled):hover{transform:translate(-50%,-50%) scale(1.025)}.portal.shake{animation:none}.route-map{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}.route-path{fill:none;stroke:transparent;stroke-width:5;stroke-linecap:round}.debug-routes .route-path{stroke:#ff2bd6;filter:drop-shadow(0 0 3px #fff)}.debug-routes #rightPath{stroke:#23e9ff}.journey-yashka{position:absolute;left:0;top:0;width:11%;height:21%;z-index:4;object-fit:contain;pointer-events:none;opacity:1;transform-origin:50% 82%;filter:drop-shadow(0 5px 4px #1d160788)}.scene-fog{position:absolute;left:28%;top:62%;width:17%;height:35%;z-index:3;object-fit:contain;pointer-events:none;transition:left .8s ease,top .8s ease,opacity .3s ease;filter:drop-shadow(0 6px 5px #1a093888);transform-origin:50% 60%;animation:fogIdle 4.6s ease-in-out infinite}@keyframes fogIdle{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(10px,-5px) scale(1.015)}50%{transform:translate(0,2px) scale(.99)}75%{transform:translate(-10px,5px) scale(1.01)}}@media(prefers-reduced-motion:reduce){.scene-fog{transition-duration:.12s}}</style>
+</head>
+<body>
+  <main id="app" aria-live="polite">
+    <section id="startScreen" class="screen start-screen active" aria-label="Главное меню">
+      <div class="start-copy">
+        <h1>ЛЕС ЗВУКОВ</h1>
+        <p>Слушай. Выбирай. Убегай от Тумана!</p>
+      </div>
+      <button id="startButton" class="hotspot start-button" aria-label="Начать игру"><span aria-hidden="true">▶</span></button>
+      <div class="start-tools"><button id="startSound" aria-label="Выключить звук">♫</button><button class="open-help" aria-label="Правила игры">?</button></div>
+      <a class="world-return" href="../index.html">← В МИР</a>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen" aria-label="Игровой раунд">
+      <div class="unified-hud">
+        <button id="sfxToggle" class="hud-tool" aria-label="Выключить игровые звуки" aria-pressed="false">♫</button>
+        <button class="hud-tool open-help" aria-label="Правила игры">?</button>
+        <div class="hud-progress" id="roundCounter">Задание 1 из 10</div>
+        <div class="hud-score">Баллы: <span id="score">0</span></div>
+        <div id="loadingStatus" class="loading-status" role="status">Слушаем…</div>
+        <div id="lives" class="unified-lives" aria-label="Осталось жизней"></div>
+      </div>
+      <a class="world-return" href="../index.html">← В МИР</a>
+
+      <div class="portal-row" id="portalRow"></div>
+      <svg id="routeMap" class="route-map" viewBox="0 0 1672 941" preserveAspectRatio="none" aria-hidden="true">
+        <path id="leftPath" class="route-path" d="M 836 830 C 836 720 836 620 836 540 C 760 520 650 470 550 405"></path>
+        <path id="rightPath" class="route-path" d="M 836 830 C 836 720 836 620 836 540 C 912 520 1022 470 1122 405"></path>
+      </svg>
+      <img id="sceneFog" class="scene-fog" src="assets/fog/fog-chasing.png" alt="Туман приближается по лесной дороге" data-distance="0">
+      <img id="journeyYashka" class="journey-yashka" src="assets/yashka/yashka-ready.png" alt="Яшка идёт к выбранной картинке" aria-hidden="true">
+      <button id="repeatButton" class="image-button repeat-button" aria-label="Повторить слово"><img src="assets/ui/audio-repeat-button.png" alt=""></button>
+
+      <div id="rewardLayer" class="reward-layer" aria-hidden="true"></div>
+    </section>
+
+    <section id="victoryScreen" class="screen victory-screen" aria-label="Победа">
+      <h2>ЛЕС СНОВА ЗВУЧИТ!</h2>
+      <div class="unified-final-stats"><span>Баллы: <b id="finalScore">0</b></span><span>Правильно: <b id="finalCorrect">0</b></span></div>
+      <div class="end-actions"><button id="playAgain">ИГРАТЬ ЕЩЁ</button></div><a class="world-return" href="../index.html">← В МИР</a>
+    </section>
+
+    <div id="helpModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden>
+      <div class="modal-shade"></div>
+      <div class="instruction-wrap">
+        <img src="assets/ui/instruction-panel.png" alt="">
+        <h2 id="helpTitle">КАК ИГРАТЬ</h2>
+        <div class="instruction-label listen">СЛУШАЙ</div>
+        <div class="instruction-label choose">ВЫБИРАЙ</div>
+        <div class="instruction-label run">УБЕГАЙ!</div>
+        <button id="closeHelp" aria-label="Закрыть инструкцию">×</button>
+      </div>
+    </div>
+
+    <div id="defeatModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="defeatTitle" hidden>
+      <div class="modal-shade"></div>
+      <div class="defeat-card">
+        <img src="assets/screens/game-card.png" alt="">
+        <div class="defeat-content"><h2 id="defeatTitle">Туман догнал Яшку</h2><p>Попробуем ещё раз?</p><div class="unified-final-stats"><span>Баллы: <b id="defeatScore">0</b></span><span>Правильно: <b id="defeatCorrect">0</b></span></div><div class="end-actions"><button id="retryButton">ЕЩЁ РАЗ</button></div></div>
+      </div>
+      <a class="world-return" href="../index.html">← В МИР</a>
+    </div>
+  </main>
+  <script src="../mir-progress.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

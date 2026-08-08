@@ -1,0 +1,35 @@
+{
+  "gameId": "talking-volcano",
+  "title": "Говорящий вулкан",
+  "targetSound": "С",
+  "viewport": { "aspectRatio": "16:9", "designWidth": 1672, "designHeight": 941 },
+  "route": { "durationSeconds": 72, "gateCount": 7, "finalClearSeconds": 8 },
+  "player": {
+    "horizontalPositionRatio": 0.25,
+    "maxTiltDegrees": 8,
+    "lives": 3,
+    "invulnerabilityMs": 2000
+  },
+  "voice": {
+    "releaseGraceMs": 900,
+    "recognizesPhoneme": false,
+    "storesAudio": false,
+    "fallbackKey": "Space"
+  },
+  "collectibles": { "regularCount": 12, "emotionCount": 2, "requiresVoiceWind": true },
+  "score": {
+    "regularCrystal": 50,
+    "emotionTask": 100,
+    "noDamageBonus": 200,
+    "landingBonus": 300,
+    "bestScoreKey": "mir.volcano.bestScore",
+    "lastScoreKey": "mir.volcano.lastScore"
+  },
+  "emotionBonuses": {
+    "joy": { "label": "радостно", "effect": "double_crystals", "count": 3 },
+    "angry": { "label": "сердито", "effect": "shield", "hits": 1 },
+    "sad": { "label": "грустно", "effect": "slow_obstacles", "durationMs": 7000 },
+    "surprised": { "label": "удивлённо", "effect": "magnet", "durationMs": 7000 }
+  }
+}
+

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0c5f68">
+  <title>Речка слов</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../games-ui.css">
+  <style>.start-button{display:grid;place-items:center;width:clamp(126px,12.6vw,215px);color:#fff;line-height:1}.start-button span{display:block;line-height:1}.unified-hud .word-card{right:calc(50% + clamp(210px,18vw,250px))}.game .repeat{top:10%}</style>
+</head>
+<body>
+<main id="app">
+  <section id="startScreen" class="screen start active" aria-label="Главное меню игры Речка слов">
+    <a class="world-return" href="../index.html">← В МИР</a>
+    <div class="start-portals portals" aria-hidden="true">
+      <div class="portal" data-lane="top"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-beginning.png" alt=""></div>
+      <div class="portal" data-lane="middle"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-middle.png" alt=""></div>
+      <div class="portal" data-lane="bottom"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-end.png" alt=""></div>
+    </div>
+    <div class="start-copy"><h1>РЕЧКА СЛОВ</h1><p>Послушай слово и определи,<br>где спрятался звук [С].<br>Направь лодку в нужный портал!</p></div>
+    <button id="startButton" class="gold-button start-button" aria-label="Играть"><span aria-hidden="true">▶</span></button>
+    <div class="start-tools"><button id="startSound" aria-label="Выключить звук">♫</button><button class="open-help" aria-label="Правила игры">?</button></div>
+  </section>
+
+  <section id="gameScreen" class="screen game" aria-label="Игровой раунд">
+    <div class="river-pan" aria-hidden="true"></div>
+    <div class="unified-hud">
+      <button id="sfxToggle" class="hud-tool" aria-label="Выключить игровые звуки">♫</button>
+      <button class="hud-tool open-help" aria-label="Правила игры">?</button>
+      <div id="roundCounter" class="hud-progress">Задание 1 из 12</div>
+      <div class="hud-score">Баллы: <span id="score">0</span></div>
+      <div id="lives" class="unified-lives" aria-label="Кристаллы жизни"></div>
+      <div class="word-card"><img id="wordImage" alt="Картинка к услышанному слову"></div>
+    </div>
+    <a class="world-return" href="../index.html">← В МИР</a>
+    <div id="loading" class="loading" role="status">Слушаем…</div>
+    <button id="repeatButton" class="image-button repeat" aria-label="Повторить слово"><img src="assets/ui/audio-repeat-button.png" alt=""></button>
+    <div id="laneButtons" class="lane-buttons" aria-label="Выберите речную полосу">
+      <button data-lane="top" aria-label="Перейти в верхнюю полосу"></button>
+      <button data-lane="middle" aria-label="Перейти в среднюю полосу"></button>
+      <button data-lane="bottom" aria-label="Перейти в нижнюю полосу"></button>
+    </div>
+    <div id="gates" class="gates portals" aria-hidden="true">
+      <div class="gate-pair" data-lane="top">
+        <span class="gate-back"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-beginning.png" alt=""></span>
+        <span class="gate-front"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-beginning.png" alt=""></span>
+      </div>
+      <div class="gate-pair" data-lane="middle">
+        <span class="gate-back"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-middle.png" alt=""></span>
+        <span class="gate-front"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-middle.png" alt=""></span>
+      </div>
+      <div class="gate-pair" data-lane="bottom">
+        <span class="gate-back"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-end.png" alt=""></span>
+        <span class="gate-front"><img class="portal-neutral" src="assets/portals/floating-water-portal.png" alt=""><img class="portal-active" src="assets/portals/floating-portal-sound-end.png" alt=""></span>
+      </div>
+    </div>
+    <div id="correctEffect" class="effect correct-effect" aria-hidden="true"><img class="correct-wave-art" src="assets/effects/current-boost-correct.png" alt=""></div>
+    <img id="wrongEffect" class="effect wrong-effect" src="assets/effects/whirlpool-wrong.png" alt="" aria-hidden="true">
+    <div id="boat" class="boat-mover" aria-label="Яшка управляет лодкой">
+      <div class="boat-bob"><img src="assets/boat/yashka-boat-right.png" alt=""></div>
+    </div>
+  </section>
+
+  <section id="victoryScreen" class="screen end victory" aria-label="Победа">
+    <div class="end-copy"><h2>МАЯК СЛОВ ЗАЖЁГСЯ!</h2><p>Ты правильно определил место звука и доставил кристаллы!</p></div>
+    <div class="unified-final-stats"><span>Баллы: <b id="finalScore">0</b></span><span>Правильно: <b id="finalCorrect">0</b></span></div>
+    <div class="end-actions"><button id="playAgain" class="gold-button">ИГРАТЬ ЕЩЁ</button></div><a class="world-return" href="../index.html">← В МИР</a>
+  </section>
+  <section id="defeatScreen" class="screen end defeat" aria-label="Поражение">
+    <div class="end-copy"><h2>ВОДОВОРОТ ЗАКРУТИЛ<br>ЛОДКУ!</h2><p>Ничего страшного. Послушай слова ещё раз и попробуй снова!</p></div>
+    <div class="unified-final-stats"><span>Баллы: <b id="defeatScore">0</b></span><span>Правильно: <b id="defeatCorrect">0</b></span></div>
+    <div class="end-actions"><button id="retryButton" class="gold-button">ЕЩЁ РАЗ</button></div><a class="world-return" href="../index.html">← В МИР</a>
+  </section>
+
+  <div id="instructionModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="instructionTitle" hidden>
+    <div class="shade"></div>
+    <div class="instruction">
+      <img src="assets/screens/river-instructions-screen.png" alt="">
+      <div class="instruction-lane-demo" aria-hidden="true">
+        <div class="instruction-demo-water"></div>
+        <div class="instruction-demo-boat"><img src="assets/boat/yashka-boat-right.png" alt=""></div>
+        <svg class="instruction-demo-arrows" viewBox="0 0 1672 941" preserveAspectRatio="none">
+          <defs>
+            <clipPath id="instructionArrowCrop" clipPathUnits="userSpaceOnUse">
+              <rect x="429" y="437" width="38" height="48"></rect>
+              <rect x="429" y="526" width="38" height="55"></rect>
+            </clipPath>
+          </defs>
+          <image href="assets/screens/river-instructions-screen.png" width="1672" height="941" clip-path="url(#instructionArrowCrop)"></image>
+        </svg>
+      </div>
+      <div class="instruction-copy">
+        <h2 id="instructionTitle">КАК ИГРАТЬ</h2>
+        <div class="instruction-step instruction-step-audio">Нажми на динамик и послушай слово.</div>
+        <div class="instruction-step instruction-step-boat">Переведи лодку в верхнюю, среднюю или нижнюю полосу.</div>
+        <div class="instruction-step instruction-step-portal"><p>Пройди через нужный портал: звук находится в начале, середине или конце слова.</p><p>Ошибся? Лодку закрутит водоворот, и исчезнет один кристалл.</p></div>
+      </div>
+      <button id="closeInstruction" class="close" aria-label="Закрыть инструкцию">×</button>
+    </div>
+  </div>
+</main>
+<script src="../mir-progress.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

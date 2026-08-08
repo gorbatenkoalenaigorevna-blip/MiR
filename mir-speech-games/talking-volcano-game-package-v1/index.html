@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#3b173f">
+  <title>Говорящий вулкан</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../games-ui.css">
+  <style>.obstacle.steam{animation:none}.start-controls{background:#fdf6e8!important}.far-bg,.near-bg{inset:0;overflow:hidden;background:#d98592;border:0;outline:0;box-shadow:none;transform:none;will-change:auto}.near-bg{opacity:.18;filter:saturate(1.2)}.bg-panel{position:absolute;top:0;left:0;height:100%;margin:0;border:0;outline:0;box-shadow:none;background:url("assets/background/volcano-background-loop.png") 0 0/100% 100% no-repeat;will-change:transform;backface-visibility:hidden}.lives{min-width:0;padding:.15em .45em;display:flex;align-items:center;gap:.05em;letter-spacing:0}.life-crystal{display:block;width:clamp(68px,7.8vw,122px);height:clamp(60px,10vh,96px);object-fit:contain;filter:drop-shadow(0 3px 3px #6b3a2766)}.life-crystal.lost{filter:grayscale(.15) opacity(.72) drop-shadow(0 2px 2px #352b3366)}.platform{bottom:auto!important}</style>
+  <style>
+    .start-controls{position:absolute;z-index:8;left:10.5%;top:52%;width:32%;height:24%;background:#fffaf0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:clamp(16px,2.2vh,24px);padding-top:2.1%}
+    .start-primary{width:76%;min-height:clamp(48px,8.5vh,72px);border:4px solid #db8619;border-radius:1.5vw;background:#fbb83e;color:#fff;font-weight:900;font-size:clamp(18px,2vw,34px);box-shadow:none;cursor:pointer;display:grid;place-items:center;line-height:1}.start-primary span{display:block;line-height:1}
+    .start-primary:hover{background:#ffc451;transform:translateY(-1px)}.start-primary:focus-visible{outline:4px solid #5ecad4;outline-offset:4px}
+    .start-mic-note{margin:0;color:#826184;font-size:clamp(13px,1.25vw,22px);line-height:1.25;text-align:center;white-space:nowrap}
+    .start-screen-link{bottom:4.5%}
+    .retry-card-content{position:absolute;z-index:7;left:6.1%;top:17.8%;width:37%;height:64.5%;padding:2.2% 3.4% 2%;border-radius:2.2vw;background:#fffaf0;display:flex;flex-direction:column;align-items:center;text-align:center;color:#512a60}
+    .retry-card-content h2{margin:0 0 4%;font-size:clamp(26px,3.15vw,54px);line-height:1.05;white-space:nowrap}.retry-safe{margin:0 0 6%;color:#ed5877;font-size:clamp(18px,2vw,34px);font-weight:900}
+    .retry-results{width:100%;display:grid;gap:clamp(10px,1.5vh,16px);margin-bottom:auto;padding:4% 3%;border:3px solid #aee8ee;border-radius:1.7vw;background:#effcff;color:#168ca0;font-size:clamp(16px,1.65vw,28px);font-weight:900}
+    .retry-results p{display:flex;justify-content:space-between;gap:1em;margin:0}.retry-results strong{color:#512a60}.retry-primary{width:100%;min-height:clamp(48px,8vh,72px);border:4px solid #bd3f60;border-radius:1.5vw;background:#e95a78;color:#fff;font-weight:900;font-size:clamp(16px,1.75vw,30px);cursor:pointer}.retry-primary:hover{background:#f16b87}.retry-primary:focus-visible{outline:4px solid #5ecad4;outline-offset:3px}
+    .retry .end-actions{display:none}.retry-menu-link{bottom:4.5%}
+    .victory .result-copy{display:none}.victory-flow{position:absolute;z-index:8;left:10.1%;top:35%;bottom:15%;width:28.4%;padding:1.4% .15% 18px;background:#fffaf0;display:flex;flex-direction:column;gap:clamp(7px,1.05vh,12px);align-items:stretch}.victory-stats{display:grid;gap:clamp(7px,1.15vh,13px);padding:clamp(9px,1.5vh,16px) clamp(14px,1.5vw,25px);border:3px solid #aee8ee;border-radius:1.7vw;background:#effcff;color:#168ca0;font-size:clamp(16px,1.55vw,26px);font-weight:900}.victory-stats p{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:1em;margin:0;white-space:nowrap}.victory-stats strong{color:#512a60}.victory-best-line{margin:0;text-align:center;color:#54295d;font-size:clamp(14px,1.35vw,23px);line-height:1.2;font-weight:900;white-space:nowrap}.victory-best-line strong{color:#118da1}.victory .end-actions{position:static;width:100%;margin-top:auto;margin-bottom:14px;display:flex;flex-direction:column;gap:clamp(8px,1.15vh,12px);text-align:center}.victory .end-actions button,.victory .end-actions a{display:grid;place-items:center;width:100%;height:clamp(46px,7.3vh,63px);margin:0;border:3px solid #db8619;border-radius:1.3vw;background:#fbb83e;box-shadow:none;color:#fff;font-size:clamp(15px,1.45vw,25px);line-height:1.1;font-weight:900;text-align:center}.victory .end-actions a{border-color:#128a9a;background:#32bdca}
+  </style>
+  <style>.victory .result-copy,.retry .result-copy{left:29%;top:28%;width:10%;gap:.8em;color:#078fa4}.victory .result-copy .best-line,.retry .result-copy .best-line{position:absolute;top:5.5em;right:-1em;width:18em;padding:.25em .6em;border-radius:999px;background:#fff8e9dd;color:#54295d;font-size:.55em}.retry .end-actions{left:10%;top:62%;width:29%;height:21%}.retry .end-actions button,.retry .end-actions a{position:absolute;left:0;width:100%;height:43%;margin:0;background:transparent;border:0;box-shadow:none;color:transparent}.retry .end-actions a{top:54%}</style>
+  <style>
+    #gameScreen .hud{inset:2.2% 2% auto}
+    #gameScreen .lives{min-width:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;gap:7px}
+    #gameScreen .life-crystal{width:auto;height:clamp(36px,5.5vh,42px);object-fit:contain;filter:drop-shadow(0 2px 3px #3b203a88)}
+    #gameScreen .life-crystal.lost{filter:grayscale(.2) opacity(.7) drop-shadow(0 1px 2px #30253888)}
+    #gameScreen .progress-card{left:34%;width:32%;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+    #gameScreen .progress-track{height:clamp(7px,.75vw,10px);min-height:7px;background:#49385780;outline:1px solid #fff9;box-shadow:0 2px 5px #32163888}
+    #gameScreen .progress-track div{box-shadow:0 0 5px #62f4ff}
+    #gameScreen .score{padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;color:#078fa4;font-size:clamp(18px,1.8vw,30px);text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff,0 2px 4px #32163888}
+    #gameScreen .mic-card{left:2%;bottom:2.2%;gap:.5em;padding:.4em .65em;background:#fffaf0bd;border:0;border-radius:1.1vw;box-shadow:0 2px 7px #32163855;font-size:clamp(9px,1vw,16px)}
+    #gameScreen .mic-icon{width:2.35em}
+    #gameScreen .mic-card small{text-transform:uppercase}
+    #gameScreen .adult-controls{right:calc(2% + 170px);bottom:2.2%;gap:.4em}
+    #gameScreen .adult-controls button{width:2.65em;border-width:1px;box-shadow:0 2px 6px #32163855}
+    #gameScreen .obstacle.hanging{top:0;bottom:auto}#gameScreen .obstacle.ground{top:auto;bottom:0}
+  </style>
+</head>
+<body>
+<main id="app" aria-live="polite">
+  <section id="startScreen" class="screen image-screen active" aria-label="Говорящий вулкан">
+    <div class="start-tools"><button id="startSound" aria-label="Выключить звук">♫</button><button id="startRules" aria-label="Правила игры">?</button></div>
+    <div class="start-controls"><button id="startButton" class="start-primary" aria-label="Играть в Говорящий вулкан"><span aria-hidden="true">▶</span></button><p class="start-mic-note">Для игры понадобится микрофон</p></div>
+    <a class="menu-link world-return" href="../index.html">← В МИР</a>
+  </section>
+
+  <section id="instructionsScreen" class="screen image-screen instructions" aria-label="Как играть">
+    <button id="closeInstructions" class="rules-close" aria-label="Закрыть правила">×</button>
+    <button id="flightButton" class="hotspot flight-hotspot" aria-label="Начать полёт"></button>
+    <a class="menu-link world-return" href="../index.html">← В МИР</a>
+  </section>
+
+  <section id="gameScreen" class="screen game-screen" aria-label="Полёт над вулканами" tabindex="-1">
+    <div class="far-bg" aria-hidden="true"><div class="bg-panel"></div><div class="bg-panel"></div></div><div class="near-bg" aria-hidden="true"><div class="bg-panel"></div><div class="bg-panel"></div></div>
+    <div id="world" class="world" aria-hidden="true"></div>
+    <img id="yashka" class="yashka" src="assets/glider/yashka-glider-idle.png" alt="Яшка на планере">
+    <div class="unified-hud">
+      <button id="hudSoundButton" class="hud-tool" aria-label="Выключить звук">♫</button>
+      <button id="rulesButton" class="hud-tool" aria-label="Правила игры">?</button>
+      <div id="taskProgress" class="hud-progress">Задание 1 из 10</div>
+      <div class="hud-score">Баллы: <span id="score">0</span></div>
+      <div id="lives" class="unified-lives" aria-label="Три жизни"></div>
+    </div>
+    <a class="menu-link world-return" href="../index.html">← В МИР</a>
+    <div id="micStatus" class="mic-card quiet"><span class="mic-icon">●</span><span><b>ГОЛОСОВОЙ ВЕТЕР</b><small id="micText">тишина</small></span></div>
+    <div class="adult-controls"><button id="pauseButton" aria-label="Пауза">Ⅱ</button></div>
+    <div id="effectBadges" class="effect-badges"></div>
+    <div id="pauseOverlay" class="overlay" hidden><div class="dialog"><h2>Пауза</h2><p>Полёт остановлен.</p><button id="resumeButton">ПРОДОЛЖИТЬ</button></div></div>
+    <div id="rulesOverlay" class="overlay" hidden><div class="dialog"><button id="closeRules" class="rules-close" aria-label="Закрыть правила">×</button><h2>Как играть</h2><p>Управляй полётом голосом или стрелками, собирай кристаллы и обходи препятствия. Ошибка забирает одну жизнь.</p></div></div>
+    <div id="emotionOverlay" class="overlay" hidden><div class="dialog emotion-dialog"><img id="emotionImage" alt="Кристалл настроения"><h2>КРИСТАЛЛ НАСТРОЕНИЯ</h2><p id="emotionPrompt"></p><div id="emotionVoice" class="voice-check">Произнесите звук…</div><small>Эмоцию проверяет взрослый. Игра замечает только наличие голоса.</small><button id="emotionDone">ГОТОВО!</button></div></div>
+  </section>
+
+  <section id="victoryScreen" class="screen image-screen victory" aria-label="Победа">
+    <div class="victory-flow">
+      <div class="victory-stats" aria-label="Статистика полёта"><p><strong>Баллы</strong><span id="victoryScore">0</span></p><p><strong>Правильно</strong><span id="victoryCorrect">0</span></p><p><strong>Кристаллы</strong><span id="victoryCollected">0</span></p></div>
+      <p class="victory-best-line">Лучший результат: <strong id="victoryBest">0</strong></p>
+      <div class="end-actions"><button id="playAgain">СЫГРАТЬ ЕЩЁ</button></div>
+    </div>
+    <a class="menu-link world-return" href="../index.html">← В МИР</a>
+  </section>
+  <section id="retryScreen" class="screen image-screen retry" aria-label="Безопасная остановка">
+    <div class="retry-card-content"><h2>ПОЧТИ ПОЛУЧИЛОСЬ!</h2><p class="retry-safe">Яшка в безопасности!</p><div class="retry-results"><p><strong>Баллы:</strong> <span id="retryScore">0</span></p><p><strong>Правильно:</strong> <span id="retryCorrect">0</span></p><p><strong>Кристаллы:</strong> <span id="retryCollected">0</span></p></div><button id="retryButton" class="retry-primary">ПОВТОРИТЬ ПОЛЁТ</button></div>
+    <a class="menu-link world-return" href="../index.html">← В МИР</a>
+  </section>
+</main>
+<script src="../mir-progress.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

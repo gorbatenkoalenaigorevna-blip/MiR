@@ -1,0 +1,169 @@
+{
+  "gameId": "river-words",
+  "title": "Речка слов",
+  "targetSound": "С",
+  "targetPhoneme": "[с]",
+  "roundCount": 12,
+  "startingLives": 3,
+  "wrongAnswerRepeatsRound": true,
+  "laneMap": {
+    "top": "beginning",
+    "middle": "middle",
+    "bottom": "end"
+  },
+  "positionLabels": {
+    "beginning": "Звук в начале слова",
+    "middle": "Звук в середине слова",
+    "end": "Звук в конце слова"
+  },
+  "timing": {
+    "roundListenDelayMs": 700,
+    "gateTravelMsRounds1To4": 9000,
+    "gateTravelMsRounds5To8": 8200,
+    "gateTravelMsRounds9To12": 7500,
+    "feedbackMs": 1300
+  },
+  "assets": {
+    "background": "assets/background/river-background.png",
+    "boat": "assets/boat/yashka-boat-right.png",
+    "gates": {
+      "beginning": "assets/gates/gate-beginning.png",
+      "middle": "assets/gates/gate-middle.png",
+      "end": "assets/gates/gate-end.png"
+    },
+    "effects": {
+      "correct": "assets/effects/current-boost-correct.png",
+      "wrong": "assets/effects/whirlpool-wrong.png"
+    },
+    "screens": {
+      "start": "assets/screens/river-start-screen.png",
+      "instructions": "assets/screens/river-instructions-screen.png",
+      "victory": "assets/screens/river-victory-screen.png",
+      "defeat": "assets/screens/river-defeat-screen.png"
+    },
+    "ui": {
+      "repeat": "assets/ui/audio-repeat-button.png",
+      "crystalWhole": "assets/ui/crystal-whole.png",
+      "crystalLost": "assets/ui/crystal-lost.png",
+      "crystalGlowing": "assets/ui/crystal-glowing.png",
+      "help": "assets/ui/help-button-v2.png",
+      "instructionPanel": "assets/ui/instruction-panel.png"
+    },
+    "effectsAudio": {
+      "roundStart": "assets/audio/effects/round-start.mp3",
+      "correct": "assets/audio/effects/correct-answer.mp3",
+      "wrong": "assets/audio/effects/gentle-error.mp3",
+      "victory": "assets/audio/effects/victory.mp3"
+    }
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "word": "сок",
+      "position": "beginning",
+      "correctLane": "top",
+      "image": "assets/words/sok-juice.png",
+      "audio": "assets/audio/words/sok.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 2,
+      "word": "коса",
+      "position": "middle",
+      "correctLane": "middle",
+      "image": "assets/words/kosa-scythe.png",
+      "audio": "assets/audio/words/kosa.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 3,
+      "word": "нос",
+      "position": "end",
+      "correctLane": "bottom",
+      "image": "assets/words/nos-nose.png",
+      "audio": "assets/audio/words/nos.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 4,
+      "word": "бусы",
+      "position": "middle",
+      "correctLane": "middle",
+      "image": "assets/words/busy-beads.png",
+      "audio": "assets/audio/words/busy.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 5,
+      "word": "сом",
+      "position": "beginning",
+      "correctLane": "top",
+      "image": "assets/words/som-catfish.png",
+      "audio": "assets/audio/words/som.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 6,
+      "word": "ананас",
+      "position": "end",
+      "correctLane": "bottom",
+      "image": "assets/words/ananas-pineapple.png",
+      "audio": "assets/audio/words/ananas.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 7,
+      "word": "сыр",
+      "position": "beginning",
+      "correctLane": "top",
+      "image": "assets/words/syr-cheese.png",
+      "audio": "assets/audio/words/syr.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 8,
+      "word": "лес",
+      "position": "end",
+      "correctLane": "bottom",
+      "image": "assets/words/les-forest.png",
+      "audio": "assets/audio/words/les.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 9,
+      "word": "весы",
+      "position": "middle",
+      "correctLane": "middle",
+      "image": "assets/words/vesy-scales.png",
+      "audio": "assets/audio/words/vesy.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 10,
+      "word": "сад",
+      "position": "beginning",
+      "correctLane": "top",
+      "image": "assets/words/sad-orchard.png",
+      "audio": "assets/audio/words/sad.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 11,
+      "word": "рис",
+      "position": "end",
+      "correctLane": "bottom",
+      "image": "assets/words/ris-rice.png",
+      "audio": "assets/audio/words/ris.mp3",
+      "audioReady": true
+    },
+    {
+      "id": 12,
+      "word": "лиса",
+      "position": "middle",
+      "correctLane": "middle",
+      "image": "assets/words/lisa-fox.png",
+      "audio": "assets/audio/words/lisa.mp3",
+      "audioReady": true
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+.yashka-helper {
+  position: absolute;
+  z-index: 20;
+  left: 27.5%;
+  top: 66.5%;
+  bottom: auto;
+  width: 9.9%;
+  height: auto;
+  aspect-ratio: 1199 / 1312;
+  pointer-events: none;
+  filter: none;
+  isolation: isolate;
+}
+
+.yashka-helper::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 29%;
+  right: 21%;
+  bottom: 1.5%;
+  height: 6.5%;
+  border-radius: 50%;
+  background: rgba(66, 49, 27, .36);
+  filter: blur(5px);
+  transform: scaleX(1.12);
+}
+
+.yashka-helper::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(240, 132, 165, .12), transparent 45%, rgba(255, 207, 104, .28));
+  -webkit-mask: url("MIR_SITE_VISUAL_ONLY/character/yashka-site-hero.png") center / contain no-repeat;
+  mask: url("MIR_SITE_VISUAL_ONLY/character/yashka-site-hero.png") center / contain no-repeat;
+  mix-blend-mode: soft-light;
+}
+
+.yashka-helper img {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: saturate(.94) sepia(.045) drop-shadow(0 4px 3px rgba(65, 43, 28, .2));
+}
+
+.yashka-helper .helper-copy {
+  position: absolute;
+  z-index: 4;
+  left: -8%;
+  top: -10%;
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+  padding: .5em .72em;
+  border: 1px solid var(--line);
+  border-radius: 16px 16px 4px 16px;
+  background: #fff9e9dc;
+  box-shadow: 0 5px 15px #51382e33;
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  transform: translate(-72%, -8%);
+}
+
+.helper-copy strong { font-size: clamp(10px, .9vw, 15px); }
+.helper-copy small { font-size: clamp(8px, .72vw, 12px); }
+
+@media (max-aspect-ratio: 1.15 / 1) {
+  .yashka-helper { width: 9.9%; height: auto; }
+  .helper-copy { display: none; }
+}
