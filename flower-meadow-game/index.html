@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#d9b46f">
+  <title>Цветочная полянка — МИР</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="fm-game">
+    <section id="fmScene" class="fm-scene" aria-live="polite">
+      <img id="fmTitleBg" class="fm-bg fm-state-bg" src="../assets/games/flower-meadow/backgrounds/flower-meadow-title.png" alt="Цветочная полянка и Яшка перед началом приключения">
+      <img class="fm-bg fm-bg-sleeping fm-gameplay-bg" src="../assets/games/flower-meadow/backgrounds/meadow-sleeping.png" alt="Спящая Цветочная полянка" hidden>
+      <img id="fmAwakeBg" class="fm-bg fm-bg-awake fm-gameplay-bg" src="../assets/games/flower-meadow/backgrounds/meadow-awake.png" alt="Проснувшаяся Цветочная полянка" hidden>
+      <img id="fmFinalBg" class="fm-bg fm-state-bg" src="../assets/games/flower-meadow/backgrounds/flower-meadow-finale.png" alt="Проснувшаяся Цветочная полянка и радующийся Яшка" hidden>
+
+      <header id="fmHud" class="fm-hud" hidden>
+        <div class="fm-copy"><h1 id="fmTitle">Разбуди одуванчики</h1><p id="fmInstruction">Нажми и спокойно удерживай кнопку «Дую»</p></div>
+        <div class="fm-petals" aria-label="Собрано лепестков: 0 из 3">
+          <img src="../assets/games/flower-meadow/ui/progress-petal-empty.png" alt="Первый лепесток">
+          <img src="../assets/games/flower-meadow/ui/progress-petal-empty.png" alt="Второй лепесток">
+          <img src="../assets/games/flower-meadow/ui/progress-petal-empty.png" alt="Третий лепесток">
+        </div>
+      </header>
+
+      <div id="fmPlayfield" class="fm-playfield" hidden>
+        <img id="fmYashka" class="fm-yashka" src="../assets/games/flower-meadow/trimmed/yashka-ready-trimmed.png" alt="Яшка готов к дыхательному упражнению">
+        <div id="fmChallenge1" class="fm-challenge fm-challenge-one">
+          <img class="fm-dandelions" src="../assets/games/flower-meadow/trimmed/dandelions-intact-trimmed.png" alt="Одуванчики">
+          <img id="fmSeeds" class="fm-seeds" src="../assets/games/flower-meadow/trimmed/dandelion-seed-trail-trimmed.png" alt="Летящие пушинки">
+          <div id="fmSprouts" class="fm-sprouts" aria-hidden="true"></div>
+        </div>
+        <div id="fmChallenge2" class="fm-challenge fm-challenge-two" hidden>
+          <svg id="fmAirRoute" class="fm-air-route" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+            <defs><filter id="fmRouteGlow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="8" result="blur"><animate attributeName="stdDeviation" values="6;10;6" dur="3s" repeatCount="indefinite"/></feGaussianBlur><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <path id="fmRoutePath" class="fm-route-guide" d="M 330 620 C 490 642 655 630 820 605 C 900 585 975 545 1048 505 C 1110 470 1160 438 1208 415 C 1235 402 1255 393 1278 386"/>
+            <path class="fm-route-segment" data-route-segment="0" d="M 330 620 C 490 642 655 630 820 605"/>
+            <path class="fm-route-segment" data-route-segment="1" d="M 820 605 C 900 585 975 545 1048 505"/>
+            <path class="fm-route-segment" data-route-segment="2" d="M 1048 505 C 1110 470 1160 438 1208 415 C 1235 402 1255 393 1278 386"/>
+            <path class="fm-route-sparkles" d="M 330 620 C 490 642 655 630 820 605 C 900 585 975 545 1048 505 C 1110 470 1160 438 1208 415 C 1235 402 1255 393 1278 386"/>
+          </svg>
+          <div class="fm-arch-wrap fm-arch-one"><span>1</span><img class="fm-arch fm-arch-back" src="../assets/games/flower-meadow/trimmed/flower-arch-trimmed.png" alt="Первая цветочная арка"><img class="fm-arch fm-arch-front" src="../assets/games/flower-meadow/trimmed/flower-arch-trimmed.png" alt="" aria-hidden="true"></div>
+          <div class="fm-arch-wrap fm-arch-two"><span>2</span><img class="fm-arch fm-arch-back" src="../assets/games/flower-meadow/trimmed/flower-arch-trimmed.png" alt="Вторая цветочная арка"><img class="fm-arch fm-arch-front" src="../assets/games/flower-meadow/trimmed/flower-arch-trimmed.png" alt="" aria-hidden="true"></div>
+          <div class="fm-arch-wrap fm-arch-three"><span>3</span><img class="fm-arch fm-arch-back" src="../assets/games/flower-meadow/trimmed/flower-arch-trimmed.png" alt="Третья цветочная арка"><img class="fm-arch fm-arch-front" src="../assets/games/flower-meadow/trimmed/flower-arch-trimmed.png" alt="" aria-hidden="true"></div>
+          <img id="fmFeather" class="fm-feather" src="../assets/games/flower-meadow/trimmed/magic-feather-trimmed.png" alt="Волшебное пёрышко">
+          <aside id="fmFeatherTutorial" class="fm-feather-tutorial">
+            <strong>Зажми «Дую» — пёрышко полетит по волшебной дорожке.</strong>
+            <span>Проведи его через три цветочные арки.</span>
+            <button id="fmTryFeather" type="button" hidden>Попробовать</button>
+          </aside>
+        </div>
+        <div id="fmChallenge3" class="fm-challenge fm-challenge-three" hidden>
+          <div id="fmBellGlow" class="fm-bell-glow glow-one"></div>
+          <img id="fmBellsClosed" class="fm-bells" src="../assets/games/flower-meadow/trimmed/bell-flowers-closed-trimmed.png" alt="Спящие цветочные колокольчики">
+          <div id="fmBellParts" class="fm-bell-parts" aria-hidden="true"><img class="fm-bell-part part-one" src="../assets/games/flower-meadow/trimmed/bell-flowers-awake-trimmed.png" alt=""><img class="fm-bell-part part-two" src="../assets/games/flower-meadow/trimmed/bell-flowers-awake-trimmed.png" alt=""><img class="fm-bell-part part-three" src="../assets/games/flower-meadow/trimmed/bell-flowers-awake-trimmed.png" alt=""></div>
+          <img id="fmBellsAwake" class="fm-bells fm-bells-awake" src="../assets/games/flower-meadow/trimmed/bell-flowers-awake-trimmed.png" alt="Проснувшиеся цветочные колокольчики">
+          <svg id="fmAirPulse" class="fm-air-pulse" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+            <g class="fm-breeze fm-breeze-one" data-breeze="0"><path d="M 325 650 C 500 625 735 695 955 675"/><path class="fm-breeze-wisp" d="M 330 635 C 520 670 730 640 950 662"/><path class="fm-breeze-wisp" d="M 335 665 C 540 635 750 704 958 686"/></g>
+            <g class="fm-breeze fm-breeze-two" data-breeze="1"><path d="M 325 650 C 565 670 820 570 1140 555"/><path class="fm-breeze-wisp" d="M 330 636 C 590 630 820 595 1135 542"/><path class="fm-breeze-wisp" d="M 335 664 C 600 690 850 575 1145 568"/></g>
+            <g class="fm-breeze fm-breeze-three" data-breeze="2"><path d="M 325 650 C 610 615 965 710 1320 680"/><path class="fm-breeze-wisp" d="M 330 635 C 620 660 980 650 1315 666"/><path class="fm-breeze-wisp" d="M 335 666 C 650 630 990 720 1325 693"/></g>
+          </svg>
+          <div id="fmButterflies" class="fm-butterflies" aria-hidden="true"></div>
+        </div>
+        <div id="fmParticles" class="fm-particles" aria-hidden="true"></div>
+      </div>
+
+      <div id="fmRest" class="fm-rest" hidden><strong id="fmRestText"></strong></div>
+      <p id="fmMessage" class="fm-message" hidden></p>
+      <output id="fmScorePop" class="fm-score-pop" hidden aria-live="polite">+1</output>
+      <button id="fmBreath" class="fm-breath" type="button" aria-label="Дуть — удерживай кнопку" hidden>Дую</button>
+
+      <section id="fmStart" class="fm-card fm-start" aria-labelledby="fmStartTitle">
+        <h1 id="fmStartTitle">Цветочная полянка</h1>
+        <p>На Цветочной полянке уснул волшебный ветерок. Поможем Яшке разбудить цветы?</p>
+        <button id="fmStartButton" type="button">Играть</button>
+      </section>
+
+      <section id="fmFinal" class="fm-card fm-final" aria-labelledby="fmFinalTitle" hidden>
+        <h1 id="fmFinalTitle">Цветочная полянка проснулась!</h1>
+        <p id="fmFinalResult">Ты прошёл 3 испытания и получил 3 балла.</p>
+        <div><button id="fmReplay" type="button">Сыграть ещё раз</button><a href="../index.html">Вернуться на карту</a></div>
+      </section>
+      <a class="fm-back" href="../index.html" aria-label="Вернуться на карту МИР">← В МИР</a>
+    </section>
+  </main>
+  <script src="../mir-progress.js?v=20260809-flower-score"></script>
+  <script src="game.js"></script>
+</body>
+</html>

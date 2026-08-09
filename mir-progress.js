@@ -1,7 +1,7 @@
 (function(){
   "use strict";
   const KEY="mir.children.v1",ATTEMPT_PREFIX="mir.attempt.";
-  const games={forest:"Лес звуков",river:"Речка слов",volcano:"Говорящий вулкан"};
+  const games={forest:"Лес звуков",river:"Речка слов",volcano:"Говорящий вулкан",flower:"Цветочная полянка",cliff:"Скала артикуляции"};
   const ranks=[
     {min:0,max:19,name:"Юный слушатель",image:"01-young-listener.png"},
     {min:20,max:49,name:"Искатель звуков",image:"02-sound-seeker.png"},
