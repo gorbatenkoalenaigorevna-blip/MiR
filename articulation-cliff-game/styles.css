@@ -52,3 +52,62 @@ body:has(#exerciseModal:not([hidden])) .ac-back{bottom:34%}
 
 .ac-unified-hud{grid-template-columns:auto minmax(130px,1fr) auto auto;z-index:70}.ac-unified-hud .hud-progress{justify-self:center}.ac-unified-hud .hud-score{justify-self:end}.ac-world-tool{color:#fff9dd;text-decoration:none}.ac-progress{left:2.3%;top:11%;gap:clamp(4px,.55vw,9px);font-size:clamp(10px,1vw,15px);font-weight:900}.ac-memory-grid,.ac-memory-grid.has-match{top:18%;height:60%}.ac-card{z-index:25}.ac-modal{z-index:60}
 @media(max-width:700px){.ac-unified-hud{grid-template-columns:auto minmax(92px,1fr) auto auto;gap:3px}.ac-unified-hud .hud-progress{min-width:92px;padding:.35em .55em;font-size:clamp(8px,2.3vw,11px)}.ac-unified-hud .hud-score{min-width:80px;padding:.35em .45em;font-size:clamp(7px,2vw,10px)}.ac-unified-hud .hud-tool{width:clamp(32px,9vw,40px);min-height:32px}.ac-progress{top:12%;left:1%;padding:.3% .6%}.ac-progress span{font-size:8px}.ac-memory-grid,.ac-memory-grid.has-match{top:19%;height:58%}}
+
+/* Exercise dialog: an independent overlay must never reflow or move the board. */
+.ac-modal{
+  position:absolute;
+  inset:0;
+  z-index:90;
+  display:grid;
+  place-items:center;
+  pointer-events:auto;
+  opacity:1;
+  background:rgba(20,25,45,.4);
+  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(4px);
+  transition:opacity .22s ease;
+}
+.ac-modal[hidden]{display:none}
+.ac-modal.is-closing{opacity:0}
+.ac-exercise{
+  position:relative;
+  inset:auto;
+  left:auto;
+  right:auto;
+  top:auto;
+  bottom:auto;
+  translate:none;
+  width:74%;
+  height:auto;
+  max-height:84%;
+  aspect-ratio:1632/788;
+  transform:scale(1);
+  transform-origin:center;
+  animation:acModalAppear .22s ease-out both;
+}
+.ac-modal.is-closing .ac-exercise{
+  opacity:0;
+  transform:scale(.96);
+  animation:none;
+  transition:opacity .2s ease,transform .2s ease;
+}
+#gameScreen.exercise-open .ac-memory-card{
+  pointer-events:none;
+  animation-play-state:paused;
+}
+#gameScreen.exercise-open .ac-match-beam{animation-play-state:paused}
+.ac-memory-card.match-focus,
+.ac-memory-card:nth-child(n+5):nth-child(-n+8).match-focus,
+.ac-memory-card:nth-child(n+9).match-focus{
+  transform:none;
+}
+@keyframes acModalAppear{
+  from{opacity:0;transform:scale(.96)}
+  to{opacity:1;transform:scale(1)}
+}
+@media(max-width:700px){
+  .ac-exercise{width:76%;max-height:84%;bottom:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  .ac-modal,.ac-exercise,.ac-modal.is-closing .ac-exercise{animation:none;transition:none}
+}
