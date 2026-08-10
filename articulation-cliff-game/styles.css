@@ -95,6 +95,7 @@ body:has(#exerciseModal:not([hidden])) .ac-back{bottom:34%}
   pointer-events:none;
   animation:none;
   translate:var(--frozen-translate,0 0);
+  transform:var(--frozen-transform,none);
 }
 #gameScreen.exercise-open .ac-match-beam{animation-play-state:paused}
 .ac-memory-card.match-focus,
