@@ -34,7 +34,7 @@ body:has(#exerciseModal:not([hidden])) .ac-back{bottom:34%}
 #gameScreen{width:100%;height:100%}
 
 /* Final exercise layout overrides. */
-.ac-scene:has(#gameScreen.active)::before{content:"";position:absolute;z-index:0;inset:0;background:url("../assets/games/articulation-cliff/backgrounds/articulation-cliff-gameplay.png") center/cover no-repeat}
+.ac-scene:has(#gameScreen.active)::before{content:"";position:absolute;z-index:0;inset:0;background:url("./assets/backgrounds/articulation-cliff-gameplay.png") center/cover no-repeat}
 #gameScreen .ac-gameplay-bg{display:none}
 #gameScreen,.ac-magic-haze,.ac-memory-grid{inset-inline-end:0}
 .ac-memory-grid,.ac-memory-grid.has-match{left:10%;right:auto;top:14%;width:80%;height:66%;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)}

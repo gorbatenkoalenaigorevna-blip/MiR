@@ -1,5 +1,5 @@
 (function(){"use strict";
-const A="../assets/games/articulation-cliff/",$=s=>document.querySelector(s),screens={title:$("#titleScreen"),game:$("#gameScreen"),final:$("#finalScreen")};
+const A="./assets/",$=s=>document.querySelector(s),screens={title:$("#titleScreen"),game:$("#gameScreen"),final:$("#finalScreen")};
 const exercises=[
  {id:"frog",title:"Лягушка",text:"Улыбнись широко-прешироко и удерживай улыбку!",image:"card-frog.png"},
  {id:"fence",title:"Заборчик",text:"Улыбнись, покажи ровные зубки и сомкни их. Получился крепкий заборчик!",image:"card-fence.png"},
